@@ -12,7 +12,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- Disable wrap
--- opt.wrap = false
+opt.wrap = false
 
 -- search settings
 opt.ignorecase = true
