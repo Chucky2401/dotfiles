@@ -1,0 +1,7 @@
+gui:
+  expandFocusedSidePanel: true
+  nerdFontsVersion: "3"
+promptToReturnFromSubprocess: true
+os:
+  editPreset: 'nvim'
+
