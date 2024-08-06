@@ -178,4 +178,10 @@ if [[ $(uname -r) =~ "-microsoft-.+-WSL" ]]; then
   export GPG_TTY=$(tty)
 fi
 
+# Import ssh key
+if ! ssh-add -l &> /dev/null; then
+  eval $(ssh-agent)
+  ssh-add -k
+fi
+
 clear
