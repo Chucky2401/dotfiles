@@ -173,4 +173,9 @@ _fzf_comprun() {
 	esac
 }
 
+# If in WSL
+if [[ $(uname -r) =~ "-microsoft-.+-WSL" ]]; then
+  export GPG_TTY=$(tty)
+fi
+
 clear
