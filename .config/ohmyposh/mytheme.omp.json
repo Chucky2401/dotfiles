@@ -1,0 +1,128 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "cyan",
+          "properties": {
+            "template": "\ue70f"
+          },
+          "style": "powerline",
+          "type": "os"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#16C60C",
+          "properties": {
+            "style": "full"
+          },
+          "style": "plain",
+          "template": " {{ if .SSHSession }}\uf817 {{ end }}TBW@{{ .HostName }} \ue0b1",
+          "trailing_diamond": ":",
+          "type": "session"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#3B78FF",
+          "properties": {
+            "folder_icon": "\uf115 ",
+            "folder_separator_icon": "\\",
+            "home_icon": "\uf7db ",
+            "max_depth": 3,
+            "style": "agnoster_short",
+            "mapped_locations": {
+              "C:/Users/tbrejon/Git/PowerShell/": "\uF09B PowerShell"
+            }
+          },
+          "style": "powerline",
+          "template": " {{ .Path }} $",
+          "type": "path"
+        },
+        {
+          "background": "#95ffa4",
+          "foreground": "#193549",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " {{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "newline": false,
+      "segments": [
+        {
+          "background": "#83769c",
+          "foreground": "#ffffff",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "powerline",
+          "template": " {{ .FormattedMs }} ",
+          "powerline_symbol": "\uE0B0",
+          "type": "executiontime",
+          "min_width": 96
+        },
+        {
+          "background": "#0077c2",
+          "foreground": "#ffffff",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "template": "{{ .Name }} ({{ .Version }})",
+          "type": "shell",
+          "min_width": 90,
+          "properties": {
+            "mapped_shell_names": {
+              "pwsh": " \uebc7",
+              "powershell": "\ue683"
+            }
+          }
+        },
+        {
+          "background": "#2e9599",
+          "foreground": "#111111",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b4",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "type": "time",
+          "min_width": 75
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "powerline",
+          "foreground": "green",
+          "template": "❱ ",
+          "properties": {
+            "always_enabled": true
+          }
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "green",
+    "template": "❱ "
+  },
+  "secondary_prompt": {
+      "background": "transparent",
+      "foreground": "green",
+      "template": "❱❱ "
+  },
+  "final_space": true,
+  "version": 2
+}
+
