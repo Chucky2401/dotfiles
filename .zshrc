@@ -185,4 +185,12 @@ if ! ssh-add -l &> /dev/null; then
   ssh-add -k
 fi
 
+# Import custom functions
+for script in ~/.local/share/sh/*.sh ; do
+  if [ -r "$script" ] ; then
+    . "$script"
+  fi
+done
+unset script
+
 clear
