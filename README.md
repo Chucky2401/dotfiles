@@ -61,7 +61,7 @@ sudo sh -c 'apk add git stow zsh fd bat eza neovim'
 - fzf
 - bat
 - neovim (see below if you are on an arm device)
-- sudo, must be in the group 'whell'
+- sudo, must be in the group 'wheel'
 - eza
 
 ```shell
