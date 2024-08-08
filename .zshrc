@@ -130,6 +130,7 @@ alias ll="eza --group-directories-first -lgh --git --icons=always"
 alias la="ll -a"
 alias susu="sudo su -"
 alias vi="nvim"
+alias lg="lazygit"
 
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
