@@ -181,7 +181,7 @@ fi
 
 # Import ssh key
 if ! ssh-add -l &> /dev/null; then
-  eval $(ssh-agent)
+  eval $(ssh-agent) &> /dev/null
   ssh-add -k
 fi
 
