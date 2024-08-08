@@ -125,6 +125,11 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
 
+# Set alias for Debian-based image distribution
+if head -1 /etc/os-release | cut -d "=" -f 2 | grep -Eqw "Debian|Ubuntu"; then
+  alias bat="batcat"
+fi
+
 alias ls="eza --group-directories-first -l --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias ll="eza --group-directories-first -lgh --git --icons=always"
 alias la="ll -a"
