@@ -23,7 +23,7 @@ The requirements depends of your distribution. Refer to your distribution, just 
 
 One-line install:
 ```shell
-sudo bash -c 'apt install git stow zsh fd-find bat eza'
+sudo apt install git stow zsh fd-find bat eza
 
 ```
 
@@ -47,7 +47,7 @@ To that, report to the instruction below for arm-based device.
 
 One-line install:
 ```shell
-sudo sh -c 'apk add git stow zsh fd bat eza neovim'
+sudo apk add git stow zsh fd bat eza neovim
 ```
 </details>
 
@@ -65,7 +65,7 @@ sudo sh -c 'apk add git stow zsh fd bat eza neovim'
 - eza
 
 ```shell
-sudo bash -c 'pacman -S git stow zsh fd fzf bat eza neovim'
+sudo pacman -S git stow zsh fd fzf bat eza neovim
 ```
 </details>
 
