@@ -29,7 +29,7 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 # Set-up fzf with git if not Arch
-if [[ ! $(head -1 /etc/os-release | cut -d "=" -f 2) =~ "Arch" ]]; then
+if ! head -1 /etc/os-release | cut -d "=" -f 2 | grep -Eqw "Arch"; then
 	# Set the directory for fzf
 	FZF_HOME="${HOME}/.fzf"
 	
