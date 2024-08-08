@@ -148,3 +148,18 @@ make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/usr/local install
 `nvim` will be available in `/usr/local`
 </details>
 
+## Installation
+
+Now you have all requirements, check out the dotfiles repo in your $HOME directory using git:
+
+```shell
+git clone https://github.com/Chucky2401/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+```
+
+Then use GNU stow to create symlinks:
+
+```shell
+stow .
+```
+
