@@ -131,7 +131,13 @@ if head -1 /etc/os-release | cut -d "=" -f 2 | grep -Eqw "Debian|Ubuntu"; then
 fi
 
 alias ls="eza --group-directories-first -l --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias ll="eza --group-directories-first -lgh --git --icons=always"
+
+if [[ $(uname -m) = "aarch64" ]]; then
+  alias ll="eza --group-directories-first -lgh --icons=always"
+else
+  alias ll="eza --group-directories-first -lgh --git --icons=always"
+fi
+
 alias la="ll -a"
 alias susu="sudo su -"
 alias vi="nvim"
