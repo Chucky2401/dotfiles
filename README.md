@@ -10,9 +10,9 @@ The requirements depends of your distribution. Refer to your distribution, just 
 - stow
 
 <details>
-<summary>Debian</summary>
+<summary>Debian/Ubuntu</summary>
 
-### Debian
+### Debian/Ubuntu
 
 - zsh
 - fd-find
@@ -76,9 +76,9 @@ For Debian-based distribution or arm device, you will need to build Neovim yours
 First, depends your distribution, you will need somes prerequisites.
 
 <details>
-<summary>Debian</summary>
+<summary>Debian/Ubuntu</summary>
 
-#### Debian
+#### Debian/Ubuntu
 
 
 ```shell
