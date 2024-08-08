@@ -4,10 +4,7 @@ Here all my dotfiles for a perfect configuration
 
 ## Requirements
 
-The requirements depends of your distribution. Refer to your distribution, just below the common requirements, use your distribution package manager:
-
-- git
-- stow
+The requirements depends of your distribution. Refer to your distribution below:
 
 <details>
 <summary>Debian/Ubuntu</summary>
