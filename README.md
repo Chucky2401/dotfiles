@@ -11,6 +11,7 @@ The requirements depends of your distribution. Refer to your distribution, just 
 
 <details>
 <summary>Debian</summary>
+
 ### Debian
 
 - zsh
@@ -34,6 +35,7 @@ To that, report to the instruction below for arm-based device.
 
 <details>
 <summary>Alpine</summary>
+
 ### Alpine
 
 - zsh
@@ -51,6 +53,7 @@ sudo sh -c 'apk add git stow zsh fd bat eza neovim'
 
 <details>
 <summary>Arch</summary>
+
 ### Arch
 
 - zsh
