@@ -1,3 +1,6 @@
+# Import functions
+. ~/.local/share/sh/scripting_func
+
 # Configuration
 ZSH_NEXT_UPDATE="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/next_update"
 ZINIT_INSTALL=0
