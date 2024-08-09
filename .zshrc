@@ -62,8 +62,9 @@ if [[ $FZF_GIT_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; the
 fi
 
 # Oh-my-posh
-OMP_DIR="/usr/local/bin/oh-my-posh"
-if [ ! -f /usr/local/bin/oh-my-posh ]; then
+OMP_DIR="/usr/local/bin"
+OMP_FULL_PATH="$OMP_DIR/oh-my-posh"
+if [ ! -f "$OMP_FULL_PATH" ]; then
 	if groups "$USER" | grep -qw "$SUDO_GROUP"; then
 	    curl -s https://ohmyposh.dev/install.sh | sudo bash -s -- -d /usr/local/bin
 	else
