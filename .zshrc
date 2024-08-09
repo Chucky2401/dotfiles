@@ -66,7 +66,8 @@ OMP_DIR="/usr/local/bin"
 OMP_FULL_PATH="$OMP_DIR/oh-my-posh"
 if [ ! -f "$OMP_FULL_PATH" ]; then
 	if groups "$USER" | grep -qw "$SUDO_GROUP"; then
-	    curl -s https://ohmyposh.dev/install.sh | sudo bash -s -- -d /usr/local/bin
+      message "Install Oh-my-posh (which may request your password)..."
+      execute_sudo "/bin/bash" "-c" "$(curl -s https://ohmyposh.dev/install.sh)" "-d" "$OMP_DIR"
 	else
 	    echo "** You are not a member of '$SUDO_GROUP' group. You must install manually oh-my-posh with root permission."
 	    echo "** Here the command to use as root: 'curl -s https://ohmyposh.dev/install.sh | bash -s'"
