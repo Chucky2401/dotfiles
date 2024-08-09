@@ -212,4 +212,4 @@ for script in ~/.local/share/sh/*.sh ; do
 done
 unset script
 
-clear
+# clear
