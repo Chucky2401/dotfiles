@@ -5,6 +5,7 @@
 ZSH_NEXT_UPDATE="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/next_update"
 ZINIT_INSTALL=0
 FZF_INSTALL=0
+FZF_GIT_INSTALL=0
 
 if [ ! -f "$ZSH_NEXT_UPDATE" ]; then
 	mkdir -p "$(dirname $ZSH_NEXT_UPDATE)"
@@ -52,10 +53,11 @@ fi
 FZF_GIT_HOME="${HOME}/.fzf-git"
 
 if [ ! -d "$FZF_GIT_HOME" ]; then
+  FZF_GIT_INSTALL=1
 	git clone https://github.com/junegunn/fzf-git.sh.git "$FZF_GIT_HOME"
 fi
 
-if [[ -d "$FZF_GIT_HOME" && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
+if [[ $FZF_GIT_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
 	nohup git -C "$FZF_GIT_HOME" fetch &> /dev/null ; git -C "$FZF_GIT_HOME" pull &> /dev/null
 fi
 
