@@ -3,13 +3,13 @@ version_lessthan() {
 }
 
 install_lazygit() {
+  message "Install Lazygit (which may request your password)..."
   if [[ $(id -u) -ne 0 ]]; then
     FUNCTIONS=$(declare -f version_lessthan install_lazygit)
     execute_sudo "bash" "-c" "$FUNCTIONS; install_lazygit"
     return
   fi
 
-  echo "Install or update Lazygit..."
 	ARCH=$(uname -m)
 	if [ "$ARCH" = "aarch64" ]; then
 		ARCH="arm64"
