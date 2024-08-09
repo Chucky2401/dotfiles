@@ -69,9 +69,9 @@ if [ ! -f "$OMP_FULL_PATH" ]; then
       message "Install Oh-my-posh (which may request your password)..."
       execute_sudo "/bin/bash" "-c" "$(curl -s https://ohmyposh.dev/install.sh)" "-d" "$OMP_DIR"
 	else
-	    echo "** You are not a member of '$SUDO_GROUP' group. You must install manually oh-my-posh with root permission."
-	    echo "** Here the command to use as root: 'curl -s https://ohmyposh.dev/install.sh | bash -s'"
-	    echo "Press [Enter] to continue ..." ; read dummy
+      message "You are not a member of '$SUDO_GROUP' group. You must install manually oh-my-posh with root permission."
+      message "Here the command to use as ${shell_bold}root${shell_reset}: ${shell_underline}sudo /bin/bash -c \"\$(curl -s https://ohmyposh.dev/install.sh) -d $OMP_DIR\"${shell_reset}"
+	    echo "Press ${shell_bold}any keys${shell_reset} to continue..." ; read dummy
 	fi
 fi
 
