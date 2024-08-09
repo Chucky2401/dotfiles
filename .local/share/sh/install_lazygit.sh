@@ -35,7 +35,3 @@ install_lazygit() {
 	fi
 }
 
-if [[ $(id -u) -eq 0 ]]; then
-  install_lazygit
-fi
-
