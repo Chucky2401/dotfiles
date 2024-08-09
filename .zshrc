@@ -70,7 +70,8 @@ fi
 OMP_DIR="/usr/local/bin"
 OMP_FULL_PATH="$OMP_DIR/oh-my-posh"
 if [ ! -f "$OMP_FULL_PATH" ]; then
-	if groups "$USER" | grep -qw "$SUDO_GROUP"; then
+	#if groups "$USER" | grep -qw "$SUDO_GROUP"; then
+  if have_sudo_access; then
       message "Install Oh-my-posh (which may request your password)..."
       execute_sudo "/bin/bash" "-c" "$(curl -s https://ohmyposh.dev/install.sh)" "-d" "$OMP_DIR"
 	else
