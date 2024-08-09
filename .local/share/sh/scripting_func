@@ -10,9 +10,9 @@ fi
 
 shell_make_bold() { shell_escape "1;$1"; }
 shell_underline="$(shell_escape "4;39")"
-shell_blue="$(shell_bold 34)"
-shell_red="$(shell_bold 31)"
-shell_bold="$(shell_bold 39)"
+shell_blue="$(shell_make_bold 34)"
+shell_red="$(shell_make_bold 31)"
+shell_bold="$(shell_make_bold 39)"
 shell_reset="$(shell_escape 0)"
 
 # Abort script
