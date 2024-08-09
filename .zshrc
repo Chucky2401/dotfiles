@@ -4,6 +4,7 @@
 # Configuration
 ZSH_NEXT_UPDATE="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/next_update"
 ZINIT_INSTALL=0
+FZF_INSTALL=0
 
 if [ ! -f "$ZSH_NEXT_UPDATE" ]; then
 	mkdir -p "$(dirname $ZSH_NEXT_UPDATE)"
@@ -37,11 +38,12 @@ if ! head -1 /etc/os-release | cut -d "=" -f 2 | grep -Eqw "Arch"; then
 	FZF_HOME="${HOME}/.fzf"
 	
 	if [ ! -d "$FZF_HOME" ]; then
+    FZF_INSTALL=1
 		git clone --depth 1 https://github.com/junegunn/fzf.git "$FZF_HOME"
 		$FZF_HOME/install --key-bindings --completion --no-update-rc
 	fi
 	
-	if [[ -d "$FZF_HOME" && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
+	if [[ $FZF_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
 		nohup git -C "$FZF_HOME" fetch &> /dev/null ; git -C "$FZF_HOME" pull &> /dev/null ; $FZF_HOME/install --key-bindings --completion --no-update-rc &> /dev/null 
 	fi
 fi
