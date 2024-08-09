@@ -3,12 +3,12 @@ version_lessthan() {
 }
 
 install_lazygit() {
-	if [[ $(id -u) -ne 0 ]]; then
-		echo "Must be run as root."
-		echo "Use \"sudo bash -c '. /home/${USER}/.local/share/sh/install_lazygit.sh'\""
+  if [[ $(id -u) -ne 0 ]]; then
+    FUNCTIONS=$(declare -f version_lessthan install_lazygit)
+    execute_sudo "bash" "-c" "$FUNCTIONS; install_lazygit"
     return
-	fi
-	
+  fi
+
 	ARCH=$(uname -m)
 	if [ "$ARCH" = "aarch64" ]; then
 		ARCH="arm64"
