@@ -76,7 +76,10 @@ if [ ! -f "$OMP_FULL_PATH" ]; then
       execute_sudo "/bin/bash" "-c" "$(curl -s https://ohmyposh.dev/install.sh)" "-d" "$OMP_DIR"
 	else
       message "You are not a member of '$SUDO_GROUP' group. You must install manually oh-my-posh with root permission."
-      message "Here the command to use as ${shell_bold}root${shell_reset}: ${shell_underline}sudo /bin/bash -c \"\$(curl -s https://ohmyposh.dev/install.sh) -d $OMP_DIR\"${shell_reset}"
+      message "You have 2 solutions:"
+      echo " - Use ${shell_bold_italic}su${shell_reset}: ${shell_underline}su -c \"\$(curl -s https://ohmyposh.dev/install.sh) -d ${OMP_DIR}${shell_reset}\""
+      echo " - Be member of ${shell_bold_italic}${SUDO_GROUP}${shell_reset} and run: ${shell_underline}sudo /bin/bash -c \"\$(curl -s https://ohmyposh.dev/install.sh) -d ${OMP_DIR}\"${shell_reset}"
+      #message "Here the command to use as ${shell_bold}root${shell_reset}: ${shell_underline}\$(curl -s https://ohmyposh.dev/install.sh) -d $OMP_DIR${shell_reset}"
 	    echo "Press ${shell_bold}any keys${shell_reset} to continue..." ; read dummy
 	fi
 fi
