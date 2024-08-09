@@ -9,6 +9,7 @@ install_lazygit() {
     return
   fi
 
+  echo "Install or update Lazygit..."
 	ARCH=$(uname -m)
 	if [ "$ARCH" = "aarch64" ]; then
 		ARCH="arm64"
