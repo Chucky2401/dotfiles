@@ -8,7 +8,7 @@ else
   shell_escape() { :; }
 fi
 
-shell_bold() { shell_escape "1;$1"; }
+shell_make_bold() { shell_escape "1;$1"; }
 shell_underline="$(shell_escape "4;39")"
 shell_blue="$(shell_bold 34)"
 shell_red="$(shell_bold 31)"
