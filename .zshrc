@@ -103,7 +103,11 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
-zinit snippet OMZP::docker
+zi ice as"completion"
+zinit snippet OMZP::docker/completions/_docker
+# zi ice as"completion"
+zinit snippet OMZP::docker-compose/_docker-compose
+zi ice svn
 zinit snippet OMZP::docker-compose
 
 # Load completions
