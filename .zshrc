@@ -112,6 +112,8 @@ zinit snippet OMZP::docker/completions/_docker
 #zinit snippet OMZP::docker-compose
 zi ice as"completion"
 zinit snippet OMZP::docker-compose/_docker-compose
+# zi ice from"gh-r" as"program" mv"docker* -> docker compose" bpick"*linux*"
+# zi load docker/compose
 
 # Load completions
 autoload -U compinit && compinit
