@@ -107,10 +107,10 @@ zinit snippet OMZP::command-not-found
 #   OMZP::docker/completions/_docker \
 #   OMZP::docker-compose/_docker-compose
 # 
-zi ice as"completion"
-zinit snippet OMZP::docker/completions/_docker
-zi ice as"completion"
-zinit snippet OMZP::docker-compose/_docker-compose
+# zi ice as"completion"
+# zinit snippet OMZP::docker/completions/_docker
+# zi ice as"completion"
+# zinit snippet OMZP::docker-compose/_docker-compose
 # zi ice svn
 # zinit snippet OMZP::docker-compose
 
@@ -175,6 +175,9 @@ alias lg="lazygit"
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
+
+# Docker autocompletion
+source <(docker completion zsh)
 
 # FZF customisation
 if which fdfind > /dev/null; then
