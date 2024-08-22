@@ -31,3 +31,6 @@ keymap.set("n", "<leader>eg", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file exp
 
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 
+-- local keymap = vim.keymap
+keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
+keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
