@@ -171,6 +171,7 @@ alias la="ll -a"
 alias susu="sudo su -"
 alias vi="nvim"
 alias lg="lazygit"
+alias ld="lazydocker"
 
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
