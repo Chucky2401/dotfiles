@@ -29,3 +29,5 @@ keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse fi
 keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
 keymap.set("n", "<leader>eg", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer" })
 
+keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+
