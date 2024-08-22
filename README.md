@@ -13,6 +13,7 @@ The requirements depends of your distribution. Refer to your distribution below:
 
 - zsh
 - fd-find
+- ripgrep
 - bat
 - neovim (see below for instruction)
 - sudo, must be in the group
@@ -20,7 +21,7 @@ The requirements depends of your distribution. Refer to your distribution below:
 
 One-line install:
 ```shell
-sudo apt install git stow zsh fd-find bat eza
+sudo apt install git stow zsh fd-find bat eza ripgrep
 
 ```
 
@@ -37,6 +38,7 @@ To that, report to the instruction below for arm-based device.
 
 - zsh
 - fd
+- ripgrep
 - bat
 - neovim (see below if you are on an arm device)
 - sudo, must be in the group 'wheel'
@@ -44,7 +46,7 @@ To that, report to the instruction below for arm-based device.
 
 One-line install:
 ```shell
-sudo apk add git stow zsh fd bat eza neovim
+sudo apk add git stow zsh fd bat eza ripgrep neovim
 ```
 </details>
 
@@ -54,7 +56,8 @@ sudo apk add git stow zsh fd bat eza neovim
 ### Arch
 
 - zsh
-- fd-find
+- fd
+- ripgrep
 - fzf
 - bat
 - neovim (see below if you are on an arm device)
@@ -62,7 +65,7 @@ sudo apk add git stow zsh fd bat eza neovim
 - eza
 
 ```shell
-sudo pacman -S git stow zsh fd fzf bat eza neovim
+sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim
 ```
 </details>
 
