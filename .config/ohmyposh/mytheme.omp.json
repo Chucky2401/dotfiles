@@ -2,18 +2,20 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
       "newline": true,
       "segments": [
         {
+          "type": "os",
           "foreground": "cyan",
           "properties": {
             "template": "\ue70f"
           },
-          "style": "powerline",
-          "type": "os"
+          "style": "powerline"
         },
         {
+          "type": "session",
           "background": "transparent",
           "foreground": "#16C60C",
           "properties": {
@@ -21,10 +23,10 @@
           },
           "style": "plain",
           "template": " {{ if .SSHSession }}\uf817 {{ end }}TBW@{{ .HostName }} \ue0b1",
-          "trailing_diamond": ":",
-          "type": "session"
+          "trailing_diamond": ":"
         },
         {
+          "type": "path",
           "background": "transparent",
           "foreground": "#3B78FF",
           "properties": {
@@ -38,19 +40,21 @@
             }
           },
           "style": "powerline",
-          "template": " {{ .Path }} $",
-          "type": "path"
+          "template": " {{ .Path }} $"
         },
         {
+          "type": "git",
           "background": "#95ffa4",
           "foreground": "#193549",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
           "template": " {{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} ",
-          "type": "git"
+          "source": "cli",
+          "properteies": {
+            "fetch_status": true
+          }
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
       "type": "prompt",
