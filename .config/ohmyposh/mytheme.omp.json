@@ -1,5 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "enable_cursor_positioning": false,
   "blocks": [
     {
       "type": "prompt",
@@ -31,16 +32,13 @@
           "foreground": "#3B78FF",
           "properties": {
             "folder_icon": "\uf115 ",
-            "folder_separator_icon": "\\",
+            "folder_separator_icon": "/",
             "home_icon": "\uf7db ",
             "max_depth": 3,
-            "style": "agnoster_short",
-            "mapped_locations": {
-              "C:/Users/tbrejon/Git/PowerShell/": "\uF09B PowerShell"
-            }
+            "style": "agnoster_short"
           },
           "style": "powerline",
-          "template": " {{ .Path }} $"
+          "template": " {{ .Path }} $ "
         },
         {
           "type": "git",
@@ -48,10 +46,17 @@
           "foreground": "#193549",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
-          "template": " {{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} ",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFEB3B{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
+            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+            "{{ if gt .Behind 0 }}#B388FB{{ end }}"
+          ],
+          "template": "{{ .User.Name }} {{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} | {{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}}  {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}}  {{ .WorktreeCount }}{{ end }} ",
           "source": "cli",
           "properteies": {
-            "fetch_status": true
+            "fetch_status": true,
+            "fetch_upstream_icon": true
           }
         }
       ]
