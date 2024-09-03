@@ -65,6 +65,7 @@
     {
       "type": "prompt",
       "alignment": "right",
+      "filler": ".",
       "newline": false,
       "segments": [
         {
