@@ -105,9 +105,9 @@
           "min_width": 90,
           "properties": {
             "mapped_shell_names": {
-              "pwsh": " \uebc7",
-              "powershell": " \ue683",
-              "zsh": " \uf120"
+              "pwsh": "\uebc7",
+              "powershell": "\ue683",
+              "zsh": "\uf120"
             }
           }
         },
