@@ -236,7 +236,7 @@ if [ ! -S "$HOME_SSH_SOCK" ] && [ -S "$SSH_AUTH_SOCK" ]; then
   ln -sf $SSH_AUTH_SOCK $HOME_SSH_SOCK
 fi
 
-if [ ! -S "$SSH_AUTH_SOCK" ]; then
+if [ ! -S "$HOME_SSH_SOCK" ]; then
   eval $(ssh-agent) &> /dev/null
   ssh-add -k
   if [ ! -S "$HOME_SSH_SOCK" ]; then
