@@ -65,7 +65,7 @@
     {
       "type": "prompt",
       "alignment": "right",
-      "filler": ".",
+      "filler": "<#ffffff,#000000>.</>",
       "newline": false,
       "segments": [
         {
