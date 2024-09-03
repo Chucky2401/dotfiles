@@ -227,9 +227,21 @@ if [[ $(uname -r) =~ "-microsoft-.+-WSL" ]]; then
 fi
 
 # Import ssh key
-if ! ssh-add -l &> /dev/null; then
+# if ! ssh-add -l &> /dev/null; then
+#   eval $(ssh-agent) &> /dev/null
+#   ssh-add -k
+# fi
+HOME_SSH_SOCK="${HOME}/.ssh/ssh_auth_sock"
+if [ ! -S "$HOME_SSH_SOCK" ] && [ -S "$SSH_AUTH_SOCK" ]; then
+  ln -sf $SSH_AUTH_SOCK $HOME_SSH_SOCK
+fi
+
+if [ ! -S "$SSH_AUTH_SOCK" ]; then
   eval $(ssh-agent) &> /dev/null
   ssh-add -k
+  if [ ! -S "$HOME_SSH_SOCK" ]; then
+    ln -sf $SSH_AUTH_SOCK $HOME_SSH_SOCK
+  fi
 fi
 
 # Import custom functions
