@@ -176,6 +176,9 @@ alias vi="nvim"
 alias lg="lazygit"
 alias ld="lazydocker"
 
+# Alias Docker Pi3
+alias syncpi3='rsync -avze "ssh -p 666" /home/docker_pi3/* --progress blackwizard@192.168.1.40:/home/docker/'
+
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
