@@ -234,12 +234,9 @@ fi
 HOME_SSH_SOCK="${HOME}/.ssh/ssh_auth.sock"
 export SSH_AUTH_SOCK="$HOME_SSH_SOCK"
 
-if [ ! -S "$HOME_SSH_SOCK" ]; then
-  eval $(ssh-agent) &> /dev/null
+if [ ! -S "$SSH_AUTH_SOCK" ]; then
+  eval $(ssh-agent -a "$SSH_AUTH_SOCK") &> /dev/null
   ssh-add -k
-  if [ ! -S "$HOME_SSH_SOCK" ]; then
-    ln -sf $SSH_AUTH_SOCK $HOME_SSH_SOCK
-  fi
 fi
 
 # Import custom functions
