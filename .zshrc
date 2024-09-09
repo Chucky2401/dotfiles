@@ -231,10 +231,8 @@ fi
 #   eval $(ssh-agent) &> /dev/null
 #   ssh-add -k
 # fi
-HOME_SSH_SOCK="${HOME}/.ssh/ssh_auth_sock"
-if [ ! -S "$HOME_SSH_SOCK" ] && [ -S "$SSH_AUTH_SOCK" ]; then
-  ln -sf $SSH_AUTH_SOCK $HOME_SSH_SOCK
-fi
+HOME_SSH_SOCK="${HOME}/.ssh/ssh_auth.sock"
+export SSH_AUTH_SOCK="$HOME_SSH_SOCK"
 
 if [ ! -S "$HOME_SSH_SOCK" ]; then
   eval $(ssh-agent) &> /dev/null
