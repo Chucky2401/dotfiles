@@ -16,3 +16,9 @@
 [submodule ".config/tmux/plugins/tmux-sensible"]
   path = .config/tmux/plugins/tmux-sensible
   url = https://github.com/tmux-plugins/tmux-sensible
+[submodule ".config/tmux/plugins/tmux-yank"]
+  path = .config/tmux/plugins/tmux-yank
+  url = https://github.com/tmux-plugins/tmux-yank
+[submodule ".config/tmux/plugins/vim-tmux-navigator"]
+  path = .config/tmux/plugins/vim-tmux-navigator
+  url = git@github.com:christoomey/vim-tmux-navigator.git
