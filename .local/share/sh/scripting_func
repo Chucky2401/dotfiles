@@ -46,6 +46,10 @@ message() {
   printf "${shell_blue}==>${shell_bold} %s${shell_reset}\n" "$(shell_join "$@")"
 }
 
+success_message() {
+  printf "${shell_green}++>${shell_bold} %s${shell_reset}\n" "$(shell_join "$@")"
+}
+
 execute() {
   if ! "$@"
   then
