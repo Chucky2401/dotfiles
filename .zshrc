@@ -235,12 +235,30 @@ fi
 #   ssh-add -k
 # fi
 HOME_SSH_SOCK="${HOME}/.ssh/ssh_auth.sock"
-export SSH_AUTH_SOCK="$HOME_SSH_SOCK"
+HOME_SSH_PID="${HOME}/.ssh/ssh_agent.pid"
 
-if [ ! -S "$SSH_AUTH_SOCK" ]; then
-  eval $(ssh-agent -a "$SSH_AUTH_SOCK") &> /dev/null
-  ssh-add -k
+if [ -z "$SSH_AGENT_PID" ]; then
+  SSH_AGENT_PID=$(cat "$HOME_SSH_PID")
 fi
+
+if ! kill -0 $SSH_AGENT_PID &> /dev/null; then
+  rm "$HOME_SSH_SOCK" &> /dev/null
+  message "Starting SSH agent..."
+  eval $(ssh-agent -a "$HOME_SSH_SOCK") &> /dev/null
+  echo "$SSH_AGENT_PID" > "$HOME_SSH_PID"
+  ssh-add -k
+  success_message "SSH agent start with '$HOME_SSH_SOCK'"
+else
+  message "SSH agent on '$HOME_SSH_SOCK' ($(cat $HOME_SSH_PID))"
+fi
+
+# if [ ! -S "$SSH_AUTH_SOCK" ]; then
+#   eval $(ssh-agent -a "$SSH_AUTH_SOCK") &> /dev/null
+#   ssh-add -k
+# fi
+
+export SSH_AUTH_SOCK="$HOME_SSH_SOCK"
+export SSH_AGENT_PID
 
 # Import custom functions
 for script in ~/.local/share/sh/*.sh ; do
