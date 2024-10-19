@@ -14,6 +14,7 @@ shell_make_bold_italic() { shell_escape "1;3;$1"; }
 shell_underline="$(shell_escape "4;39")"
 shell_blue="$(shell_make_bold 34)"
 shell_red="$(shell_make_bold 31)"
+shell_green="$(shell_make_bold 32)"
 shell_bold="$(shell_make_bold 39)"
 shell_bold_italic="$(shell_make_bold_italic 39)"
 shell_reset="$(shell_escape 0)"
