@@ -41,7 +41,7 @@ shell_join() {
 #   printf "%s" "${1/"$'\n'"/}"
 # }
 
-# Print message
+# Print informative message
 message() {
   printf "${shell_blue}==>${shell_bold} %s${shell_reset}\n" "$(shell_join "$@")"
 }
