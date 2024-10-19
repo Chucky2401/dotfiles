@@ -274,6 +274,8 @@ unset OMP_DIR OMP_FULL_PATH
 
 # Fortune with cowsay
 # Because is funny
-fortune -a | cowsay | lolcat
+if which fortune &> /dev/null || which cowsay &> /dev/null || which lolcat &> /dev/null; then
+  fortune -a | cowsay | lolcat
+fi
 
 # clear
