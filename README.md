@@ -43,10 +43,13 @@ To that, report to the instruction below for arm-based device.
 - neovim (see below if you are on an arm device)
 - sudo, must be in the group 'wheel'
 - eza
+- coreutils
+- build-base
+- npm
 
 One-line install:
 ```shell
-sudo apk add git stow zsh fd bat eza ripgrep neovim
+sudo apk add git stow zsh fd bat eza ripgrep neovim coreutils build-base npm
 ```
 </details>
 
