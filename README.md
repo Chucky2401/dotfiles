@@ -156,13 +156,17 @@ make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/usr/local install
 Now you have all requirements, check out the dotfiles repo in your $HOME directory using git:
 
 ```shell
+# Clone this repo
 git clone https://github.com/Chucky2401/dotfiles.git ~/dotfiles
+# Clone tmux tpm
+git clone https://github.com/tmux-plugins/tpm ~/dotfiles/.tmux/plugins/tpm
+# Move to dotfiles directory
 cd ~/dotfiles
 ```
 
 Then use GNU stow to create symlinks:
 
 ```shell
-stow .
+stow -R .
 ```
 
