@@ -157,9 +157,8 @@ Now you have all requirements, check out the dotfiles repo in your $HOME directo
 
 ```shell
 # Clone this repo
-git clone https://github.com/Chucky2401/dotfiles.git ~/dotfiles
-# Clone tmux tpm
-git clone https://github.com/tmux-plugins/tpm ~/dotfiles/.tmux/plugins/tpm
+git clone --recurse-submodules https://github.com/Chucky2401/dotfiles.git ~/dotfiles
+
 # Move to dotfiles directory
 cd ~/dotfiles
 ```
