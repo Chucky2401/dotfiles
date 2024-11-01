@@ -38,6 +38,7 @@ To that, report to the instruction below for arm-based device.
 
 - zsh
 - fd
+- grep
 - ripgrep
 - bat
 - neovim (see below if you are on an arm device)
@@ -49,7 +50,7 @@ To that, report to the instruction below for arm-based device.
 
 One-line install:
 ```shell
-sudo apk add git stow zsh fd bat eza ripgrep neovim coreutils build-base npm
+sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm
 ```
 </details>
 
