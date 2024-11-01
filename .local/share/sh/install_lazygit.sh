@@ -17,9 +17,6 @@ install_lazygit() {
 	
 	LG_SETUP_FOLDER="/opt/lazygit/"
 	LAZYGIT_VERSION_GIT=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*' > /dev/null 2>&1)
-  if [ $? -ne 0 ]; then
-    LAZYGIT_VERSION_GIT=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | sed -e 's/[{}]/''/g' | awk -v RS='",' -F: '/"tag_name"/ {print $2}' | sed -E 's/"| |v//g' | head -1)
-  fi
 
 	LAZYGIT_VERSION_INSTALLED="0.0.0"
 	
