@@ -38,15 +38,19 @@ To that, report to the instruction below for arm-based device.
 
 - zsh
 - fd
+- grep
 - ripgrep
 - bat
 - neovim (see below if you are on an arm device)
 - sudo, must be in the group 'wheel'
 - eza
+- coreutils
+- build-base
+- npm
 
 One-line install:
 ```shell
-sudo apk add git stow zsh fd bat eza ripgrep neovim
+sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm
 ```
 </details>
 
@@ -153,13 +157,16 @@ make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/usr/local install
 Now you have all requirements, check out the dotfiles repo in your $HOME directory using git:
 
 ```shell
-git clone https://github.com/Chucky2401/dotfiles.git ~/dotfiles
+# Clone this repo
+git clone --recurse-submodules https://github.com/Chucky2401/dotfiles.git ~/dotfiles
+
+# Move to dotfiles directory
 cd ~/dotfiles
 ```
 
 Then use GNU stow to create symlinks:
 
 ```shell
-stow .
+stow -R .
 ```
 
