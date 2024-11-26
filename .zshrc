@@ -225,9 +225,9 @@ _fzf_comprun() {
 }
 
 # If in WSL
-if [[ $(uname -r) =~ "-microsoft-.+-WSL" ]]; then
+# if [[ $(uname -r) =~ "-microsoft-.+-WSL" ]]; then
   export GPG_TTY=$(tty)
-fi
+# fi
 
 # Import ssh key
 # if ! ssh-add -l &> /dev/null; then
