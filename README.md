@@ -162,7 +162,7 @@ Now you have all requirements, check out the dotfiles repo in your $HOME directo
 
 ```shell
 # Clone this repo
-git clone --recurse-submodules https://github.com/Chucky2401/dotfiles.git ~/dotfiles
+git clone --recurse-submodules -j8 https://github.com/Chucky2401/dotfiles.git ~/dotfiles
 
 # Move to dotfiles directory
 cd ~/dotfiles
