@@ -13,6 +13,7 @@ ZSH_NEXT_UPDATE="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/next_update"
 ZINIT_INSTALL=0
 FZF_INSTALL=0
 FZF_GIT_INSTALL=0
+OMP_INSTALL=0
 
 if [ ! -f "$ZSH_NEXT_UPDATE" ]; then
 	mkdir -p "$(dirname $ZSH_NEXT_UPDATE)"
@@ -81,17 +82,24 @@ OMP_DIR="/usr/local/bin"
 OMP_FULL_PATH="$OMP_DIR/oh-my-posh"
 if [ ! -f "$OMP_FULL_PATH" ]; then
 	#if groups "$USER" | grep -qw "$SUDO_GROUP"; then
-  if have_sudo_access; then
-      message "Install Oh-my-posh (which may request your password)..."
-      execute_sudo "/bin/bash" "-c" "$(curl -s https://ohmyposh.dev/install.sh)" "-d" "$OMP_DIR"
-	else
-      message "You are not a member of '$SUDO_GROUP' group. You must install manually oh-my-posh with root permission."
-      message "You have 2 solutions:"
-      echo " - Use ${shell_bold_italic}su${shell_reset}: ${shell_underline}su -c \"\$(curl -s https://ohmyposh.dev/install.sh) -d ${OMP_DIR}${shell_reset}\""
-      echo " - Be member of ${shell_bold_italic}${SUDO_GROUP}${shell_reset} and run: ${shell_underline}sudo /bin/bash -c \"\$(curl -s https://ohmyposh.dev/install.sh) -d ${OMP_DIR}\"${shell_reset}"
-      #message "Here the command to use as ${shell_bold}root${shell_reset}: ${shell_underline}\$(curl -s https://ohmyposh.dev/install.sh) -d $OMP_DIR${shell_reset}"
-	    echo "Press ${shell_bold}any keys${shell_reset} to continue..." ; read dummy
-	fi
+  OMP_INSTALL=1
+  install_ohmyposh
+  # if have_sudo_access; then
+  #     message "Install Oh-my-posh (which may request your password)..."
+  #     # execute_sudo "/bin/bash" "-c" "$(curl -s https://ohmyposh.dev/install.sh)" "-d" "$OMP_DIR"
+	# else
+  #     message "You are not a member of '$SUDO_GROUP' group. You must install manually oh-my-posh with root permission."
+  #     message "You have 2 solutions:"
+  #     echo " - Use ${shell_bold_italic}su${shell_reset}: ${shell_underline}su -c \"\$(curl -s https://ohmyposh.dev/install.sh) -d ${OMP_DIR}${shell_reset}\""
+  #     echo " - Be member of ${shell_bold_italic}${SUDO_GROUP}${shell_reset} and run: ${shell_underline}sudo /bin/bash -c \"\$(curl -s https://ohmyposh.dev/install.sh) -d ${OMP_DIR}\"${shell_reset}"
+  #     #message "Here the command to use as ${shell_bold}root${shell_reset}: ${shell_underline}\$(curl -s https://ohmyposh.dev/install.sh) -d $OMP_DIR${shell_reset}"
+	#     echo "Press ${shell_bold}any keys${shell_reset} to continue..." ; read dummy
+	# fi
+fi
+
+if [[ $OMP_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
+  message "Update Oh-My-Posh"
+	nohup install_ohmyposh &> /dev/null
 fi
 
 # Source/Load zinit
