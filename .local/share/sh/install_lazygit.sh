@@ -4,7 +4,7 @@ version_lessthan() {
 
 install_lazygit() {
   if [[ $(id -u) -ne 0 ]]; then
-    message "Install Lazygit (which may request your password)..."
+    message "Install/Update Lazygit (which may request your password)..."
     FUNCTIONS=$(declare -f version_lessthan install_lazygit)
     execute_sudo "bash" "-c" "$FUNCTIONS; install_lazygit"
     return
