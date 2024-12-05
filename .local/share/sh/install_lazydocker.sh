@@ -4,7 +4,7 @@ version_lessthan() {
 
 install_lazydocker() {
   if [[ $(id -u) -ne 0 ]]; then
-    message "Install Lazydocker (which may request your password)..."
+    message "Install/Update Lazydocker (which may request your password)..."
     FUNCTIONS=$(declare -f version_lessthan install_lazydocker)
     execute_sudo "bash" "-c" "$FUNCTIONS; install_lazydocker"
     return
