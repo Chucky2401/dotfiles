@@ -32,7 +32,7 @@ install_lazydocker() {
 	
 	if version_lessthan "$LAZYDOCKER_VERSION_INSTALLED" "$LAZYDOCKER_VERSION_GIT"; then
     echo "==> URL: https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${LAZYDOCKER_VERSION_GIT}_Lnux_${ARCH}.tar.gz"
-		curl -Lo /opt/lazydocker/lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${LAZYDOCKER_VERSION_GIT}_Linux_${ARCH}.tar.gz"
+		curl -sLo /opt/lazydocker/lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${LAZYDOCKER_VERSION_GIT}_Linux_${ARCH}.tar.gz"
 		tar xf /opt/lazydocker/lazydocker.tar.gz -C /opt/lazydocker/ lazydocker
 		install -Dm 755 /opt/lazydocker/lazydocker -t /usr/local/bin
 		rm -f /opt/lazydocker/lazydocker*
