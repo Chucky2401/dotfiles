@@ -1,6 +1,13 @@
 # Import functions
 . ~/.local/share/sh/scripting_func
 
+# Import custom functions
+for script in ~/.local/share/sh/*.sh ; do
+  if [ -r "$script" ] ; then
+    . "$script"
+  fi
+done
+
 # Configuration
 ZSH_NEXT_UPDATE="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/next_update"
 ZINIT_INSTALL=0
@@ -259,13 +266,6 @@ fi
 
 export SSH_AUTH_SOCK="$HOME_SSH_SOCK"
 export SSH_AGENT_PID
-
-# Import custom functions
-for script in ~/.local/share/sh/*.sh ; do
-  if [ -r "$script" ] ; then
-    . "$script"
-  fi
-done
 
 unset script
 unset ZSH_NEXT_UPDATE ZINIT_INSTALL FZF_INSTALL FZF_GIT_INSTALL
