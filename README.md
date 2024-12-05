@@ -18,10 +18,11 @@ The requirements depends of your distribution. Refer to your distribution below:
 - neovim (see below for instruction)
 - sudo, must be in the group
 - eza
+- tmux
 
 One-line install:
 ```shell
-sudo apt install git stow zsh fd-find bat eza ripgrep
+sudo apt install git stow zsh fd-find bat eza ripgrep tmux
 
 ```
 
@@ -47,10 +48,12 @@ To that, report to the instruction below for arm-based device.
 - coreutils
 - build-base
 - npm
+- bash
+- tmux
 
 One-line install:
 ```shell
-sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm
+sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux
 ```
 </details>
 
@@ -67,9 +70,10 @@ sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base np
 - neovim (see below if you are on an arm device)
 - sudo, must be in the group 'wheel'
 - eza
+-tmux 
 
 ```shell
-sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim
+sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim tmux
 ```
 </details>
 
