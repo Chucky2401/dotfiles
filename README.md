@@ -19,10 +19,11 @@ The requirements depends of your distribution. Refer to your distribution below:
 - sudo, must be in the group
 - eza
 - tmux
+- curl
 
 One-line install:
 ```shell
-sudo apt install git stow zsh fd-find bat eza ripgrep tmux
+sudo apt install git stow zsh fd-find bat eza ripgrep tmux curl
 
 ```
 
@@ -50,10 +51,16 @@ To that, report to the instruction below for arm-based device.
 - npm
 - bash
 - tmux
+- curl
+
+If you plan to use *lazygit* you have to install *ncurses* package too.
 
 One-line install:
 ```shell
-sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux
+sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl
+
+# With lazygit support
+sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl ncurses
 ```
 </details>
 
@@ -70,10 +77,11 @@ sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base np
 - neovim (see below if you are on an arm device)
 - sudo, must be in the group 'wheel'
 - eza
--tmux 
+- tmux 
+- curl
 
 ```shell
-sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim tmux
+sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim tmux curl
 ```
 </details>
 
