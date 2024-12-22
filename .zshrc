@@ -99,7 +99,7 @@ fi
 
 if [[ $OMP_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
   message "Update Oh-My-Posh"
-	nohup install_ohmyposh &> /dev/null
+	install_ohmyposh
 fi
 
 # Source/Load zinit
