@@ -26,7 +26,7 @@ install_ohmyposh() {
 	fi
 	
 	if [[ -d "$OMP_SETUP_FOLDER" && -f "$OMP_PATH" ]]; then
-		OMP_VERSION_INSTALLED=$(oh-my-posh --version)
+		OMP_VERSION_INSTALLED=$(oh-my-posh version)
 	fi
 
   if [[ "$OMP_VERSION_INSTALLED" == "0.0.0" ]]; then
