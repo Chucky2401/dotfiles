@@ -17,7 +17,7 @@ install_ohmyposh() {
   OMP_PATH="$OMP_SETUP_FOLDER/oh-my-posh"
   OMP_INSTALL_FOLDER="/opt/ohmyposh"
   OMP_INSTALL_FILE="$OMP_INSTALL_FOLDER/install.sh"
-	OMP_VERSION_GIT=$(curl -s "https://api.github.com/repos/jandedobbeleer/oh-my-posh/releases/latest" | grep -Po '"tag_name": "v\K[^"]*' > /dev/null 2>&1)
+	OMP_VERSION_GIT=$(curl -s "https://api.github.com/repos/jandedobbeleer/oh-my-posh/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 
 	OMP_VERSION_INSTALLED="0.0.0"
 	
