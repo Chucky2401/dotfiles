@@ -40,7 +40,7 @@ install_ohmyposh() {
     fi
 
     execute "$OMP_INSTALL_FILE" "-d" "$OMP_SETUP_FOLDER"
-    exit 0
+    # exit 0
   fi
 	
 	if version_lessthan "$OMP_VERSION_INSTALLED" "$OMP_VERSION_GIT"; then
