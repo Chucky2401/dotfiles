@@ -49,7 +49,7 @@ install_ohmyposh() {
 		# sudo install -Dm 755 /opt/lazygit/lazygit -t /usr/local/bin
 		# rm -f /opt/lazygit/lazygit*
 		# echo "$LAZYGIT_VERSION_GIT" > /opt/lazygit/last_version
-    execute_sudo "oh-my-posh upgrade"
+    execute "oh-my-posh" "upgrade"
 	fi
 }
 
