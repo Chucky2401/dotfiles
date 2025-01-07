@@ -21,8 +21,8 @@ shell_reset="$(shell_escape 0)"
 
 # Abort script
 abort() {
-  printf "%s\n" "$@" >&2
-  exit 1
+  printf "[ABORTED] %s\n" "$@" >&2
+  # exit 1
 }
 
 # Join arguments
