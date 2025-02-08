@@ -122,6 +122,7 @@ zinit snippet OMZP::command-not-found
 
 # Load completions
 autoload -U compinit && compinit
+autoload -Uz +X bashcompinit && bashcompinit
 # zicompinit
 
 zinit cdreplay -q
