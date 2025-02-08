@@ -187,6 +187,7 @@ alias lg="lazygit"
 
 # Utile
 alias ld="lazydocker"
+alias fman="compgen -c | fzf | xargs man"
 
 # Alias Docker Pi3
 alias syncpi3='rsync -avze "ssh -p 666" /home/docker_pi3/* --progress blackwizard@192.168.1.40:/home/docker/'
