@@ -174,10 +174,14 @@ else
   alias ll="eza --group-directories-first -lgh --git --icons=always"
 fi
 
+# Quotidien
 alias la="ll -a"
+
 alias susu="sudo su -"
 alias vi="nvim"
 alias lg="lazygit"
+
+# Utile
 alias ld="lazydocker"
 
 # Alias Docker Pi3
