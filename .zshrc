@@ -176,6 +176,10 @@ fi
 
 # Quotidien
 alias la="ll -a"
+alias llt="ll --sort=modified"
+alias lltr="ll --sort=oldest"
+alias lat="la --sort=modified"
+alias latr="la --sort=oldest"
 
 alias susu="sudo su -"
 alias vi="nvim"
