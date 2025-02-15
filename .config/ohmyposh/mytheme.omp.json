@@ -41,7 +41,7 @@
             "cache_duration": "none",
             "folder_icon": "\uf115 ",
             "folder_separator_icon": "/",
-            "home_icon": "\uf7db ",
+            "home_icon": "󰋜 ",
             "max_depth": 3,
             "style": "agnoster_short"
           },
