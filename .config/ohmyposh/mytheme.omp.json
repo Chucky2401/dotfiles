@@ -44,7 +44,12 @@
             "folder_separator_icon": "/",
             "home_icon": " ",
             "max_depth": 3,
-            "style": "agnoster_short"
+            "style": "agnoster_short",
+            "mapped_locations": {
+              "/home/docker": " Local",
+              "/home/docker_pi3": " Pi3",
+              "/home/docker_hp": " HP"
+            }
           },
           "style": "powerline",
           "powerline_symbol": "",
