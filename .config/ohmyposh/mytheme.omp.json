@@ -19,7 +19,8 @@
           "properties": {
             "debian": " ",
             "raspbian": " ",
-            "windows": " "
+            "windows": " ",
+            "alpine": " "
           },
           "style": "powerline",
           "powerline_symbol": "",
