@@ -30,6 +30,7 @@ keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file
 keymap.set("n", "<leader>eg", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer" })
 
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+keymap.set("n", "<leader>fn", "<cmd>Telescope nerdy<cr>", { desc = "Show Nerdy" })
 
 -- local keymap = vim.keymap
 keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
