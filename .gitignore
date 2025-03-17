@@ -1,2 +1,6 @@
+# Tmux
 .config/tmux/plugins/*
 !.config/tmux/plugins/.gitkeep
+
+# Pro - Do not sync, sensitive data!
+.local/share/sh/pro_*
