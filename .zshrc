@@ -1,6 +1,3 @@
-# Import functions
-. ~/.local/share/sh/scripting_func
-
 # Import custom functions
 for script in ~/.local/share/sh/*.sh ; do
   if [ -r "$script" ] ; then
