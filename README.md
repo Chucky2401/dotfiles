@@ -20,10 +20,12 @@ The requirements depends of your distribution. Refer to your distribution below:
 - eza
 - tmux
 - curl
+- yarn
+- npm
 
 One-line install:
 ```shell
-sudo apt install git stow zsh fd-find bat eza ripgrep tmux curl
+sudo apt install git stow zsh fd-find bat eza ripgrep tmux curl yarn npm
 
 ```
 
@@ -52,12 +54,14 @@ To that, report to the instruction below for arm-based device.
 - bash
 - tmux
 - curl
+- yarn
+- npm
 
 If you plan to use *lazygit* you have to install *ncurses* package too.
 
 One-line install:
 ```shell
-sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl
+sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl yarn npm
 
 # With lazygit support
 sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl ncurses
@@ -79,9 +83,11 @@ sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base np
 - eza
 - tmux 
 - curl
+- yarn
+- npm
 
 ```shell
-sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim tmux curl
+sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim tmux curl yarn npm
 ```
 </details>
 
