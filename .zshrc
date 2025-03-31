@@ -7,10 +7,16 @@ done
 
 # Configuration
 ZSH_NEXT_UPDATE="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/next_update"
+USER_LOCAL_BIN="${XDG_DATA_HOME:-${HOME}}/.local/bin"
 ZINIT_INSTALL=0
 FZF_INSTALL=0
 FZF_GIT_INSTALL=0
 OMP_INSTALL=0
+
+# Env variable
+if [[ ":${PATH}:" != *":${USER_LOCAL_BIN}:"* ]]; then
+  export PATH="${PATH}:${USER_LOCAL_BIN}"
+fi
 
 if [ ! -f "$ZSH_NEXT_UPDATE" ]; then
 	mkdir -p "$(dirname $ZSH_NEXT_UPDATE)"
