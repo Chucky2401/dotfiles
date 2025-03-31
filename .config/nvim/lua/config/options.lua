@@ -1,3 +1,6 @@
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
 vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
@@ -18,6 +21,9 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 
+-- Scroll
+opt.scrolloff = 8
+
 -- cursorline
 opt.cursorline = true
 opt.cursorlineopt = "both"
@@ -26,7 +32,7 @@ opt.cursorlineopt = "both"
 opt.backspace = "indent,eol,start"
 
 -- clipboard
-opt.clipboard:append("unnamedplus")
+-- opt.clipboard:append("unnamedplus")
 
 -- split windows
 opt.splitright = true
@@ -34,4 +40,3 @@ opt.splitbelow = true
 
 -- Fold method
 opt.foldmethod = "indent"
-
