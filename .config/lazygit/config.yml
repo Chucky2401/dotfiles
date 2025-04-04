@@ -1,7 +1,10 @@
 gui:
   expandFocusedSidePanel: true
+  switchTabsWithPanelJumpKeys: true
   nerdFontsVersion: "3"
+  wrapLinesInStagingView: true
 promptToReturnFromSubprocess: true
 os:
+  edit: "nvim {{filename}}"
   editPreset: 'nvim'
 
