@@ -40,7 +40,7 @@ opt.splitbelow = true
 
 -- Fold method
 opt.foldmethod = "indent"
-opt.foldlevel = 0
+opt.foldlevel = 1
 
 -- Animation
 vim.g.snacks_animate = false
