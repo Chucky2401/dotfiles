@@ -7,6 +7,7 @@ local opt = vim.opt
 
 opt.relativenumber = true
 opt.number = true
+opt.colorcolumn = "80"
 
 -- tabs & indentation
 opt.tabstop = 2
