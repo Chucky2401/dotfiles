@@ -6,3 +6,12 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  group = vim.api.nvim_create_augroup("filetype_xml", { clear = true }),
+  desc = "Change filetype to xml",
+  callback = function()
+    if vim.fn.expand("%:e") == "ps1xml" then
+      vim.bo.filetype = "xml"
+    end
+  end,
+})
