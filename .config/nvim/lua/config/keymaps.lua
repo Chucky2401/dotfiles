@@ -24,3 +24,6 @@ keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" 
 keymap.set("n", "<s-tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev Buffer" })
 keymap.set("n", "<a-b>", "<cmd>BufferLineMoveNext<cr>", { desc = "Move Buffer Next" })
 keymap.set("n", "<a-B>", "<cmd>BufferLineMovePrev<cr>", { desc = "Move Buffer Prev" })
+
+-- Util
+keymap.set("v", "<leader>ct", ":!column -t -s '|' -o '|'<cr>", { desc = "Formatting markdow table" })
