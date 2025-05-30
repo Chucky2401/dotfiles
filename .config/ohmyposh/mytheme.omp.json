@@ -58,6 +58,14 @@
           "type": "path"
         },
         {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#100e23",
+          "background": "#906cff",
+          "template": "  {{ .Full }} "
+        },
+        {
           "properties": {
             "fetch_status": true,
             "fetch_upstream_icon": true,
