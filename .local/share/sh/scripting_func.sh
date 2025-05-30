@@ -1,8 +1,7 @@
 unset HAVE_SUDO_ACCESS
 
 # String formatter
-if [[ -t 1 ]]
-then
+if [[ -t 1 ]]; then
   shell_escape() { printf "\033[%sm" "$1"; }
 else
   shell_escape() { :; }
@@ -30,8 +29,7 @@ shell_join() {
   local arg
   printf "%s" "$1"
   shift
-  for arg in "$@"
-  do
+  for arg in "$@"; do
     printf " "
     printf "%s" "${arg// /\ }"
   done
@@ -47,12 +45,15 @@ message() {
 }
 
 success_message() {
-  printf "${shell_green}++>${shell_bold} %s${shell_reset}\n" "$(shell_join "$@")"
+  printf "${shell_green}==>${shell_bold} %s${shell_reset}\n" "$(shell_join "$@")"
+}
+
+error_message() {
+  printf "${shell_red}==>${shell_bold} %s${shell_reset}\n" "$(shell_join "$@")"
 }
 
 execute() {
-  if ! "$@"
-  then
+  if ! "$@"; then
     abort "$(printf "Failed during: %s" "$(shell_join "$@")")"
   fi
 }
