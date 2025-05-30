@@ -124,7 +124,6 @@ apk add build-base cmake coreutils curl unzip gettext-tiny-dev musl-dev
 
 #### Arch
 
-
 ```shell
 pacman -S base-devel cmake unzip ninja curl
 ```
@@ -146,7 +145,6 @@ Finally, follow instruction below according to your distribution:
 
 #### Debian/Ubuntu
 
-
 ```shell
 make CMAKE_BUILD_TYPE=Release
 cd build
@@ -161,7 +159,6 @@ dpkg -i nvim-linux64.deb
 <summary>Other distributions</summary>
 
 #### Other distributions
-
 
 ```shell
 make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/usr/local install
