@@ -26,7 +26,6 @@ The requirements depends of your distribution. Refer to your distribution below:
 One-line install:
 ```shell
 sudo apt install git stow zsh fd-find bat eza ripgrep tmux curl yarn npm
-
 ```
 
 #### Neovim instruction
@@ -184,4 +183,6 @@ Then use GNU stow to create symlinks:
 ```shell
 stow -R .
 ```
+## Post-Installation
 
+I recommend you to start NeoVim a first time to initialize all LazyVim plugins
