@@ -36,6 +36,9 @@
           "trailing_diamond": ":",
           "template": " {{ if .SSHSession }} 󰌘 {{ end }}{{ .UserName }}@{{ first (splitList \".\" .HostName) }} ",
           "background": "#0a5f05",
+          "background_templates": [
+            "{{ if contains \"root\" .UserName }}#920B16{{ end }}"
+          ],
           "type": "session"
         },
         {
