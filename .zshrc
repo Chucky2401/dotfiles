@@ -243,11 +243,6 @@ _fzf_comprun() {
 	esac
 }
 
-# If in WSL
-# if [[ $(uname -r) =~ "-microsoft-.+-WSL" ]]; then
-  export GPG_TTY=$(tty)
-# fi
-
 # Import ssh key
 # if ! ssh-add -l &> /dev/null; then
 #   eval $(ssh-agent) &> /dev/null
@@ -275,6 +270,8 @@ fi
 #   eval $(ssh-agent -a "$SSH_AUTH_SOCK") &> /dev/null
 #   ssh-add -k
 # fi
+# Fix for GPG
+export GPG_TTY=$(tty)
 
 export SSH_AUTH_SOCK="$HOME_SSH_SOCK"
 export SSH_AGENT_PID
