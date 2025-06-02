@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 
 clear_ssh() {
+  typeset -l startSshAgent
+  startSshAgent="n"
+
   message "Cleaning ssh agent..."
   message "Remove files in ~/.ssh..."
 
@@ -28,4 +31,11 @@ clear_ssh() {
   done
 
   message "SSH agent environment variables have been removed successfully!"
+
+  echo -n "Would you like to start the SSH agent? "
+  read -r startSshAgent
+
+  if [[ "${startSshAgent}" -eq "o" ]]; then
+    start_ssh_agent
+  fi
 }
