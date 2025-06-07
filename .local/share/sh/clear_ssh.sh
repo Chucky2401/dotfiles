@@ -4,6 +4,15 @@ clear_ssh() {
   typeset -l startSshAgent
   startSshAgent="n"
 
+  message "Kill ssh agent..."
+  pkill ssh-agent
+  killStatus=$?
+
+  if [[ $rmStatus -ne 0 ]]; then
+    error_message "Cannot kill the SSH agent. Aborting!"
+    exit 1
+  fi
+
   message "Cleaning ssh agent..."
   message "Remove files in ~/.ssh..."
 
