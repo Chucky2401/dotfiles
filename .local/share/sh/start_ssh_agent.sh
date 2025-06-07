@@ -3,10 +3,12 @@ function start_ssh_agent() {
   HOME_SSH_PID="${HOME}/.ssh/ssh_agent.pid"
 
   if [ -z "$SSH_AGENT_PID" ]; then
-    SSH_AGENT_PID=$(cat "$HOME_SSH_PID" &>/dev/null)
+    echo "SSH_AGENT_PID is empty"
+    SSH_AGENT_PID=$(cat "$HOME_SSH_PID")
   fi
 
   if ! kill -0 $SSH_AGENT_PID &>/dev/null; then
+    echo "SSH_AGENT_PID (${SSH_AGENT_PID}) pid does not exist"
     rm "$HOME_SSH_SOCK" &>/dev/null
     message "Starting SSH agent..."
     eval $(ssh-agent -a "$HOME_SSH_SOCK") &>/dev/null
@@ -18,5 +20,5 @@ function start_ssh_agent() {
   fi
 
   export SSH_AUTH_SOCK="$HOME_SSH_SOCK"
-  export SSH_AGENT_PID
+  export SSH_AGENT_PID=$SSH_AGENT_PID
 }
