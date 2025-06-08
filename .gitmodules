@@ -2,3 +2,7 @@
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 	branch = master
+[submodule "dotfiles_pro"]
+	path = .local/share/sh/pro
+	url = git@github.com:Chucky2401/dotfiles_pro.git
+	branch = main
