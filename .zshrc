@@ -1,5 +1,6 @@
 # Import custom functions
-for script in ~/.local/share/sh/*.sh ; do
+# for script in ~/.local/share/sh/*.sh ; do
+for script in $(find ~/.local/share/sh/ -name "*.sh") ; do
   if [ -r "$script" ] ; then
     . "$script"
   fi
