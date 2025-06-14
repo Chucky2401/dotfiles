@@ -22,10 +22,17 @@ The requirements depends of your distribution. Refer to your distribution below:
 - curl
 - yarn
 - npm
+- zoxide
 
 One-line install:
 ```shell
 sudo apt install git stow zsh fd-find bat eza ripgrep tmux curl yarn npm
+```
+
+For zoxide, run the script from the OP Github repo:
+
+```shell
+  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 ```
 
 #### Neovim instruction
@@ -55,12 +62,13 @@ To that, report to the instruction below for arm-based device.
 - curl
 - yarn
 - npm
+- zoxide
 
 If you plan to use *lazygit* you have to install *ncurses* package too.
 
 One-line install:
 ```shell
-sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl yarn npm
+sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl yarn npm zoxide
 
 # With lazygit support
 sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl ncurses
@@ -84,9 +92,10 @@ sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base np
 - curl
 - yarn
 - npm
+- zoxide
 
 ```shell
-sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim tmux curl yarn npm
+sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim tmux curl yarn npm zoxide
 ```
 </details>
 
