@@ -255,6 +255,9 @@ unset ZSH_NEXT_UPDATE ZINIT_INSTALL FZF_INSTALL FZF_GIT_INSTALL
 unset DATE_NEXT_UPDATE DATE_NOW_FORMAT
 unset OMP_DIR OMP_FULL_PATH
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # Fortune with cowsay
 # Because is funny
 if which fortune &> /dev/null || which cowsay &> /dev/null || which lolcat &> /dev/null; then
