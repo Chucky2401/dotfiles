@@ -86,6 +86,10 @@ if [[ $FZF_GIT_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; the
 	nohup git -C "$FZF_GIT_HOME" fetch &> /dev/null ; git -C "$FZF_GIT_HOME" pull &> /dev/null
 fi
 
+# Zoxide for Debian or Ubuntu system only
+# if [[ "$OS_NAME" =~ "Debian|Ubuntu" ]]; then
+# fi
+
 # Oh-my-posh
 OMP_DIR="/usr/local/bin"
 OMP_FULL_PATH="$OMP_DIR/oh-my-posh"
