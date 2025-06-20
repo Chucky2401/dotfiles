@@ -14,6 +14,11 @@ FZF_INSTALL=0
 FZF_GIT_INSTALL=0
 OMP_INSTALL=0
 
+# Get OS pretty_name
+while IFS='=' read -r name value; do
+  OS_NAME="$value"
+done < <(head -1 /etc/os-release)
+
 # Env variable
 if [[ ":${PATH}:" != *":${USER_LOCAL_BIN}:"* ]]; then
   export PATH="${PATH}:${USER_LOCAL_BIN}"
@@ -50,7 +55,7 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 # Set-up fzf with git if not Arch
-if ! head -1 /etc/os-release | cut -d "=" -f 2 | grep -Eqw "Arch"; then
+if [[ "$OS_NAME" != "Arch" ]]; then
 	# Set the directory for fzf
 	FZF_HOME="${HOME}/.fzf"
 	
@@ -166,7 +171,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
 
 # Set alias for Debian-based image distribution
-if head -1 /etc/os-release | cut -d "=" -f 2 | grep -Eqw "Debian|Ubuntu"; then
+if [[ "$OS_NAME" =~ "Debian|Ubuntu" ]]; then
   alias bat="batcat"
 fi
 
