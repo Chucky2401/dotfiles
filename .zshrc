@@ -87,8 +87,17 @@ if [[ $FZF_GIT_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; the
 fi
 
 # Zoxide for Debian or Ubuntu system only
-# if [[ "$OS_NAME" =~ "Debian|Ubuntu" ]]; then
-# fi
+if [[ "$OS_NAME" =~ "Debian|Ubuntu" ]]; then
+  if ! type zoxide &>/dev/null; then
+    message "Install zoxide..."
+    install_zoxide
+  fi
+
+  if type zoxide &>/dev/null && [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
+    message "Update zoxide..."
+    install_zoxide
+  fi
+fi
 
 # Oh-my-posh
 OMP_DIR="/usr/local/bin"
