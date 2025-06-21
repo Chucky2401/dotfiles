@@ -22,17 +22,18 @@ The requirements depends of your distribution. Refer to your distribution below:
 - curl
 - yarn
 - npm
-- zoxide
+- zoxide<sup>\*</sup>
 
 One-line install:
 
-```shell
+```bash
 sudo apt install git stow zsh fd-find bat eza ripgrep tmux curl yarn npm
 ```
 
-For zoxide, run the script from the OP Github repo:
+<sup>\*</sup>Zoxide will be installed when you source the file. Otherwise you
+  can run the command below:
 
-```shell
+```bash
   curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 ```
 
@@ -69,11 +70,11 @@ If you plan to use *lazygit* you have to install *ncurses* package too.
 
 One-line install:
 
-```shell
+```bash
 sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl yarn npm zoxide
 
 # With lazygit support
-sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl ncurses
+sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl yarn npm zoxide ncurses
 ```
 
 </details>
@@ -97,7 +98,7 @@ sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base np
 - npm
 - zoxide
 
-```shell
+```bash
 sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim tmux curl yarn npm zoxide
 ```
 
@@ -114,7 +115,7 @@ First, depends your distribution, you will need somes prerequisites.
 
 #### Debian/Ubuntu
 
-```shell
+```bash
 sudo apt install ninja-build gettext cmake unzip curl build-essential gcc libc6
 ```
 
@@ -125,7 +126,7 @@ sudo apt install ninja-build gettext cmake unzip curl build-essential gcc libc6
 
 #### Alpine
 
-```shell
+```bash
 apk add build-base cmake coreutils curl unzip gettext-tiny-dev musl-dev
 ```
 
@@ -136,7 +137,7 @@ apk add build-base cmake coreutils curl unzip gettext-tiny-dev musl-dev
 
 #### Arch
 
-```shell
+```bash
 pacman -S base-devel cmake unzip ninja curl
 ```
 
@@ -144,7 +145,7 @@ pacman -S base-devel cmake unzip ninja curl
 
 Now we will clone the repository and choose the stable version (all commands below must be run as root):
 
-```shell
+```bash
 git clone https://github.com/neovim/neovim /opt/neovim
 
 cd /opt/neovim
@@ -158,7 +159,7 @@ Finally, follow instruction below according to your distribution:
 
 #### Debian/Ubuntu
 
-```shell
+```bash
 make CMAKE_BUILD_TYPE=Release
 cd build
 cpack -G DEB
@@ -173,7 +174,7 @@ dpkg -i nvim-linux64.deb
 
 #### Other distributions
 
-```shell
+```bash
 make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/usr/local install
 ```
 
@@ -184,7 +185,7 @@ make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/usr/local install
 
 Now you have all requirements, check out the dotfiles repo in your $HOME directory using git:
 
-```shell
+```bash
 # Clone this repo
 git clone --recurse-submodules -j8 https://github.com/Chucky2401/dotfiles.git ~/dotfiles
 
@@ -194,7 +195,7 @@ cd ~/dotfiles
 
 Then use GNU stow to create symlinks:
 
-```shell
+```bash
 stow -R .
 ```
 
