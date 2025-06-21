@@ -1,7 +1,3 @@
-version_lessthan() {
-	! printf "%s\n%s" "$2" "$1" | sort -CV
-}
-
 install_lazygit() {
   if [[ $(id -u) -ne 0 ]]; then
     message "Install/Update Lazygit (which may request your password)..."
