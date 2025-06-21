@@ -25,6 +25,7 @@ The requirements depends of your distribution. Refer to your distribution below:
 - zoxide
 
 One-line install:
+
 ```shell
 sudo apt install git stow zsh fd-find bat eza ripgrep tmux curl yarn npm
 ```
@@ -67,12 +68,14 @@ To that, report to the instruction below for arm-based device.
 If you plan to use *lazygit* you have to install *ncurses* package too.
 
 One-line install:
+
 ```shell
 sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl yarn npm zoxide
 
 # With lazygit support
 sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl ncurses
 ```
+
 </details>
 
 <details>
@@ -88,7 +91,7 @@ sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base np
 - neovim (see below if you are on an arm device)
 - sudo, must be in the group 'wheel'
 - eza
-- tmux 
+- tmux
 - curl
 - yarn
 - npm
@@ -97,6 +100,7 @@ sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base np
 ```shell
 sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim tmux curl yarn npm zoxide
 ```
+
 </details>
 
 ### Neovim Debian-based or arm device
@@ -110,10 +114,10 @@ First, depends your distribution, you will need somes prerequisites.
 
 #### Debian/Ubuntu
 
-
 ```shell
 sudo apt install ninja-build gettext cmake unzip curl build-essential gcc libc6
 ```
+
 </details>
 
 <details>
@@ -121,10 +125,10 @@ sudo apt install ninja-build gettext cmake unzip curl build-essential gcc libc6
 
 #### Alpine
 
-
 ```shell
 apk add build-base cmake coreutils curl unzip gettext-tiny-dev musl-dev
 ```
+
 </details>
 
 <details>
@@ -135,6 +139,7 @@ apk add build-base cmake coreutils curl unzip gettext-tiny-dev musl-dev
 ```shell
 pacman -S base-devel cmake unzip ninja curl
 ```
+
 </details>
 
 Now we will clone the repository and choose the stable version (all commands below must be run as root):
@@ -192,6 +197,7 @@ Then use GNU stow to create symlinks:
 ```shell
 stow -R .
 ```
+
 ## Post-Installation
 
 I recommend you to start NeoVim a first time to initialize all LazyVim plugins
