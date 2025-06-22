@@ -220,7 +220,9 @@ alias synchp='rsync -avze "ssh -p 666" /home/docker_hp/* --progress blackwizard@
 eval "$(fzf --zsh)"
 
 # Docker autocompletion
-source <(docker completion zsh)
+if type docker &>/dev/null; then
+  source <(docker completion zsh)
+fi
 
 # FZF customisation
 if which fdfind > /dev/null; then
