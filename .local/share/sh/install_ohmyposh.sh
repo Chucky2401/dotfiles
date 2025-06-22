@@ -5,6 +5,7 @@ install_ohmyposh() {
     FUNCTIONS=$(declare -f install_ohmyposh)
 
     execute_sudo "-E" "zsh" "-c" "$FUNCTIONS; install_ohmyposh"
+    execute_sudo "zsh" "-c" "chown -R $(id -u):$(id -u) $(echo ~/.cache/oh-my-posh/)"
 
     unset COMMON_FUNCTIONS
 
