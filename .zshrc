@@ -16,7 +16,7 @@ OMP_INSTALL=0
 
 # Get OS pretty_name
 while IFS='=' read -r name value; do
-  OS_NAME="$value"
+  export OS_NAME="$value"
 done < <(head -1 /etc/os-release)
 
 # Env variable
@@ -29,8 +29,8 @@ if [ ! -f "$ZSH_NEXT_UPDATE" ]; then
 	date -d "+10 days" +"%Y-%m-%dT%H-%M-%S%:z" > $ZSH_NEXT_UPDATE
 fi
 
-DATE_NEXT_UPDATE="$(cat $ZSH_NEXT_UPDATE)"
-DATE_NOW_FORMAT="$(date +"%Y-%m-%dT%H-%M-%S%:z")"
+export DATE_NEXT_UPDATE="$(cat $ZSH_NEXT_UPDATE)"
+export DATE_NOW_FORMAT="$(date +"%Y-%m-%dT%H-%M-%S%:z")"
 
 # First set LANG
 export LANG=fr_FR.UTF-8
@@ -269,6 +269,9 @@ unset script
 unset ZSH_NEXT_UPDATE ZINIT_INSTALL FZF_INSTALL FZF_GIT_INSTALL
 unset DATE_NEXT_UPDATE DATE_NOW_FORMAT
 unset OMP_DIR OMP_FULL_PATH
+unset DATE_NEXT_UPDATE
+unset DATE_NOW_FORMAT
+unset OS_NAME
 
 # Zoxide
 eval "$(zoxide init zsh)"
