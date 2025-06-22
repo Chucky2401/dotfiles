@@ -1,4 +1,8 @@
 install_ohmyposh() {
+  if type oh-my-posh &>/dev/null && ! [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
+    return
+  fi
+
   if [[ $(id -u) -ne 0 ]]; then
     message "Install/Update Oh-My-Posh (which may request your password)..."
     export COMMON_FUNCTIONS=$(readlink -f ~/.local/share/sh/_scripting_func.sh)
@@ -26,21 +30,22 @@ install_ohmyposh() {
     mkdir $OMP_SETUP_FOLDER
   fi
 
-  if [[ -d "$OMP_SETUP_FOLDER" && -f "$OMP_PATH" ]]; then
+  # if [[ -d "$OMP_SETUP_FOLDER" && -f "$OMP_PATH" ]]; then
+  if type oh-my-posh &>/dev/null; then
     OMP_VERSION_INSTALLED=$(oh-my-posh version)
   fi
 
-  if [[ "$OMP_VERSION_INSTALLED" == "0.0.0" ]]; then
+  if ! type oh-my-posh &>/dev/null; then
     if [[ ! -d "$OMP_INSTALL_FOLDER" ]]; then
       mkdir -p "$OMP_INSTALL_FOLDER"
     fi
 
-    if [[ ! -e "$OMP_INSTALL_FILE" ]]; then
-      curl -sLo "$OMP_INSTALL_FILE" https://ohmyposh.dev/install.sh
-      chmod +x "$OMP_INSTALL_FILE"
-    fi
+    curl -sLo "$OMP_INSTALL_FILE" https://ohmyposh.dev/install.sh
+    chmod +x "$OMP_INSTALL_FILE"
 
     execute "$OMP_INSTALL_FILE" "-d" "$OMP_SETUP_FOLDER"
+    rm -f "$OMP_INSTALL_FILE"
+
     return
   fi
 
