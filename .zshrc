@@ -37,10 +37,7 @@ export LANG=fr_FR.UTF-8
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-if cat /etc/group | grep -qw 'sudo'; then
-	SUDO_GROUP="sudo"
-fi
+SUDO_GROUP="sudo"
 
 if cat /etc/group | grep -qw 'wheel'; then
 	SUDO_GROUP="wheel"
