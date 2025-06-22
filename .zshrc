@@ -277,7 +277,7 @@ unset DATE_NOW_FORMAT
 unset OS_NAME
 
 # Zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Fortune with cowsay
 # Because is funny
