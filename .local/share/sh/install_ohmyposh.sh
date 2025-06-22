@@ -4,7 +4,7 @@ install_ohmyposh() {
     export COMMON_FUNCTIONS=$(readlink -f ~/.local/share/sh/_scripting_func.sh)
     FUNCTIONS=$(declare -f install_ohmyposh)
 
-    execute_sudo "--preserve-env" "zsh" "-c" "$FUNCTIONS; install_ohmyposh"
+    execute_sudo "-E" "zsh" "-c" "$FUNCTIONS; install_ohmyposh"
 
     unset COMMON_FUNCTIONS
 
