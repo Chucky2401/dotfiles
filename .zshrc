@@ -24,6 +24,7 @@ if [[ ":${PATH}:" != *":${USER_LOCAL_BIN}:"* ]]; then
   export PATH="${PATH}:${USER_LOCAL_BIN}"
 fi
 
+# Date for next update
 if [ ! -f "$ZSH_NEXT_UPDATE" ]; then
 	mkdir -p "$(dirname $ZSH_NEXT_UPDATE)"
 	date -d "+10 days" +"%Y-%m-%dT%H-%M-%S%:z" > $ZSH_NEXT_UPDATE
@@ -37,6 +38,8 @@ export LANG=fr_FR.UTF-8
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Group grant sudo access
 SUDO_GROUP="sudo"
 
 if cat /etc/group | grep -qw 'wheel'; then
