@@ -49,7 +49,6 @@ fi
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
   message "Install Zinit"
-	ZINIT_INSTALL=1
 	mkdir -p "$(dirname $ZINIT_HOME)"
 	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
@@ -115,7 +114,7 @@ fi
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
-if [[ $ZINIT_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
+if [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
 	message "Update Zinit"
 	zinit self-update &> /dev/null
 	zinit update &> /dev/null
