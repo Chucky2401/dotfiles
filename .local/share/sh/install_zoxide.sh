@@ -1,8 +1,16 @@
 function install_zoxide() {
+  if ! [[ "$OS_NAME" =~ "Debian|Ubuntu" ]]; then
+    return
+  fi
+
+  if type zoxide &>/dev/null && ! [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
+    return
+  fi
+
   if [[ $(id -u) -ne 0 ]]; then
     message "Install/Update Zoxide (which may request your password)..."
     FUNCTIONS=$(declare -f version_lessthan install_zoxide)
-    execute_sudo "zsh" "-c" "$FUNCTIONS; install_zoxide"
+    execute_sudo "-E" "zsh" "-c" "$FUNCTIONS; install_zoxide"
     return
   fi
 
