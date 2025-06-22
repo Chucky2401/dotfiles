@@ -100,17 +100,18 @@ install_zoxide
 # fi
 
 # Oh-my-posh
-OMP_DIR="/usr/local/bin"
-OMP_FULL_PATH="$OMP_DIR/oh-my-posh"
-if [ ! -f "$OMP_FULL_PATH" ]; then
-  OMP_INSTALL=1
-  install_ohmyposh
-fi
-
-if [[ $OMP_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
-  message "Update Oh-My-Posh"
-	install_ohmyposh
-fi
+install_ohmyposh
+# OMP_DIR="/usr/local/bin"
+# OMP_FULL_PATH="$OMP_DIR/oh-my-posh"
+# if [ ! -f "$OMP_FULL_PATH" ]; then
+#   OMP_INSTALL=1
+#   install_ohmyposh
+# fi
+# 
+# if [[ $OMP_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
+#   message "Update Oh-My-Posh"
+# 	install_ohmyposh
+# fi
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
