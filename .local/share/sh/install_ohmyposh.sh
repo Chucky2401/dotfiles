@@ -1,9 +1,13 @@
 install_ohmyposh() {
   if [[ $(id -u) -ne 0 ]]; then
     message "Install/Update Oh-My-Posh (which may request your password)..."
-    export COMMON_FUNCTIONS=$(readlink -f ~/.local/share/sh/scripting_func.sh)
+    export COMMON_FUNCTIONS=$(readlink -f ~/.local/share/sh/_scripting_func.sh)
     FUNCTIONS=$(declare -f version_lessthan install_ohmyposh)
-    execute_sudo "--preserve-env" "bash" "-c" "$FUNCTIONS; install_ohmyposh"
+
+    execute_sudo "--preserve-env" "zsh" "-c" "$FUNCTIONS; install_ohmyposh"
+
+    unset COMMON_FUNCTIONS
+
     return
   fi
 
