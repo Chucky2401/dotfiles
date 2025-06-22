@@ -11,6 +11,8 @@ The requirements depends of your distribution. Refer to your distribution below:
 
 ### Debian/Ubuntu
 
+- git
+- gpg
 - zsh
 - fd-find
 - ripgrep
@@ -27,7 +29,7 @@ The requirements depends of your distribution. Refer to your distribution below:
 One-line install:
 
 ```bash
-sudo apt install git stow zsh fd-find bat eza ripgrep tmux curl yarn npm
+sudo apt install git gpg stow zsh fd-find bat ripgrep tmux curl yarn npm
 ```
 
 <sup>\*</sup>Zoxide will be installed when you source the file. Otherwise you
@@ -48,6 +50,8 @@ To that, report to the instruction below for arm-based device.
 
 ### Alpine
 
+- git
+- gpg
 - zsh
 - fd
 - grep
@@ -71,10 +75,10 @@ If you plan to use *lazygit* you have to install *ncurses* package too.
 One-line install:
 
 ```bash
-sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl yarn npm zoxide
+sudo apk add git gpg stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl yarn npm zoxide
 
 # With lazygit support
-sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl yarn npm zoxide ncurses
+sudo apk add git gpg stow zsh fd bat eza grep ripgrep neovim coreutils build-base npm bash tmux curl yarn npm zoxide ncurses
 ```
 
 </details>
@@ -84,6 +88,8 @@ sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base np
 
 ### Arch
 
+- git
+- gpg
 - zsh
 - fd
 - ripgrep
@@ -99,7 +105,7 @@ sudo apk add git stow zsh fd bat eza grep ripgrep neovim coreutils build-base np
 - zoxide
 
 ```bash
-sudo pacman -S git stow zsh fd fzf bat eza ripgrep neovim tmux curl yarn npm zoxide
+sudo pacman -S git gpg stow zsh fd fzf bat eza ripgrep neovim tmux curl yarn npm zoxide
 ```
 
 </details>
