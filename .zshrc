@@ -272,7 +272,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Fortune with cowsay
 # Because is funny
-if which fortune &> /dev/null || which cowsay &> /dev/null || which lolcat &> /dev/null; then
+if type fortune &>/dev/null && type cowsay &>/dev/null && type lolcat &>/dev/null; then
   fortune -a | cowsay | lolcat
 fi
 
