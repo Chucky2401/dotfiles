@@ -44,11 +44,6 @@ install_ohmyposh() {
   fi
 
   if version_lessthan "$OMP_VERSION_INSTALLED" "$OMP_VERSION_GIT"; then
-    # curl -Lo /opt/lazygit/lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION_GIT}_Linux_${ARCH}.tar.gz"
-    # tar xf /opt/lazygit/lazygit.tar.gz -C /opt/lazygit/ lazygit
-    # sudo install -Dm 755 /opt/lazygit/lazygit -t /usr/local/bin
-    # rm -f /opt/lazygit/lazygit*
-    # echo "$LAZYGIT_VERSION_GIT" > /opt/lazygit/last_version
     execute "oh-my-posh" "upgrade"
   fi
 }
