@@ -19,12 +19,12 @@ The requirements depends of your distribution. Refer to your distribution below:
 - bat
 - neovim (see below for instruction)
 - sudo, must be in the group
-- eza
+- eza<sup>\*</sup>
 - tmux
 - curl
 - yarn
 - npm
-- zoxide<sup>\*</sup>
+- zoxide<sup>\*\*</sup>
 
 One-line install:
 
@@ -32,13 +32,20 @@ One-line install:
 sudo apt install git gpg stow zsh fd-find bat ripgrep tmux curl yarn npm
 ```
 
-<sup>\*</sup>Zoxide will be installed when you source the file. Otherwise you
-  can run the command below:
+<sup>\*</sup>To install eza on this distribution, you need to use these
+commands:
 
 ```bash
-  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+sudo mkdir -p /etc/apt/keyrings
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+sudo apt update
+sudo apt install -y eza
 ```
 
+<sup>\*\*</sup>Zoxide will be installed for all users when you source the file.
+Otherwise you can run the command below:
 #### Neovim instruction
 
 On Debian-based image, neovim is too old to work with NvChad. We will need to compile it yourself.
