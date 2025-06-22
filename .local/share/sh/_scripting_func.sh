@@ -64,7 +64,6 @@ execute_sudo() {
     if [[ -n "${SUDO_ASKPASS-}" ]]; then
       args=("-A" "${args[@]}")
     fi
-    # message "/usr/bin/sudo" "${args[@]}"
     execute "/usr/bin/sudo" "${args[@]}"
   else
     message "${args[@]}"
@@ -91,4 +90,12 @@ have_sudo_access() {
   fi
 
   return "${HAVE_SUDO_ACCESS}"
+}
+
+version_lessthan() {
+  ! printf "%s\n%s" "$2" "$1" | sort -CV
+}
+
+ensure() {
+  if ! "$@"; then abort "command failed: $*"; fi
 }
