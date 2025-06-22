@@ -270,6 +270,10 @@ unset OS_NAME
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
+# Atuin
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+
 # Fortune with cowsay
 # Because is funny
 if type fortune &>/dev/null && type cowsay &>/dev/null && type lolcat &>/dev/null; then
