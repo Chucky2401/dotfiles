@@ -46,10 +46,15 @@ sudo apt install -y eza
 
 <sup>\*\*</sup>Zoxide will be installed for all users when you source the file.
 Otherwise you can run the command below:
+
+```bash
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+```
+
 #### Neovim instruction
 
 On Debian-based image, neovim is too old to work with NvChad. We will need to compile it yourself.
-To that, report to the instruction below for arm-based device.
+For that, report to the instruction below for arm-based device.
 </details>
 
 <details>
