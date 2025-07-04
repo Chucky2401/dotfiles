@@ -1,6 +1,6 @@
 # Dotfiles
 
-Here all my dotfiles for a perfect configuration
+Here all my dotfiles for a perfect configuration (in my point of view)
 
 ## Requirements
 
@@ -19,12 +19,12 @@ The requirements depends of your distribution. Refer to your distribution below:
 - bat
 - neovim (see below for instruction)
 - sudo, must be in the group
-- eza<sup>\*</sup>
+- eza[^1]
 - tmux
 - curl
 - yarn
 - npm
-- zoxide<sup>\*\*</sup>
+- zoxide[^2]
 
 One-line install:
 
@@ -32,20 +32,9 @@ One-line install:
 sudo apt install git gpg stow zsh fd-find bat ripgrep tmux curl yarn npm
 ```
 
-<sup>\*</sup>To install eza on this distribution, you need to use these
-commands:
-
-```bash
-sudo mkdir -p /etc/apt/keyrings
-wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
-echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
-sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
-sudo apt update
-sudo apt install -y eza
-```
-
-<sup>\*\*</sup>Zoxide will be installed for all users when you source the file.
-Otherwise you can run the command below:
+<sup>\*\*</sup>Zoxide will be installed for all users when you source the .zshrc
+file, it will ask you password to run as root. Otherwise you can run the command
+below:
 
 ```bash
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
@@ -53,7 +42,9 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 
 #### Neovim instruction
 
-On Debian-based image, neovim is too old to work with NvChad. We will need to compile it yourself.
+On Debian-based image, neovim is too old to work with LazyVim. We will need to
+compile it yourself.
+
 For that, report to the instruction below for arm-based device.
 </details>
 
@@ -126,7 +117,7 @@ sudo pacman -S git gpg stow zsh fd fzf bat eza ripgrep neovim tmux curl yarn npm
 
 For Debian-based distribution or arm device, you will need to build Neovim yourself.
 
-First, depends your distribution, you will need somes prerequisites.
+First, depends your distribution, you will need some prerequisites.
 
 <details>
 <summary>Debian/Ubuntu</summary>
@@ -201,7 +192,7 @@ make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/usr/local install
 
 ## Installation
 
-Now you have all requirements, check out the dotfiles repo in your $HOME directory using git:
+Now you have all requirements, check out the dotfiles repo in your home directory using git:
 
 ```bash
 # Clone this repo
@@ -211,7 +202,7 @@ git clone --recurse-submodules -j8 https://github.com/Chucky2401/dotfiles.git ~/
 cd ~/dotfiles
 ```
 
-Then use GNU stow to create symlinks:
+Then use GNU Stow to create symlinks:
 
 ```bash
 stow -R .
@@ -219,4 +210,17 @@ stow -R .
 
 ## Post-Installation
 
-I recommend you to start NeoVim a first time to initialize all LazyVim plugins
+I recommend you to start NeoVim a first time to initialize all LazyVim plugins.
+
+For tmux, you will have to start a new session and install plugins.
+After running the session, just hit `prefix, I` (`prefix, Shift + i`). In the config
+files, the prefix is set to `Ctrl + Space` and `Ctrl + b`.
+
+## Roadmap
+
+- [ ] Adding atuin install script and information
+
+[^1]: For Debian-based distribution, please report to [repo instruction](https://github.com/eza-community/eza/blob/main/INSTALL.md#debian-and-ubuntu)
+[^2]: Zoxide will be installed for all users when you source the .zshrc
+file, it will ask you password to run as root. Otherwise you can run this
+command: `curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh`
