@@ -1,1 +1,5 @@
 sync_address = "https://atuin.tjvs.win"
+sync_frequency = "30m"
+enter_accept = true
+keymap_mode = "vim-normal"
+keymap_cursor = { emacs = "blink-block", vim_insert = "blink-block", vim_normal = "steady-block" }
