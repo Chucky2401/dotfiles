@@ -16,4 +16,23 @@ function conn_ssh() {
     --bind 'enter:become(ssh {1})'
 }
 
+function conn_telnet() {
+  LIST_CONNEXION=$(
+    cat <<EOF
+Alberes:hostname alberes.sterimed.local:telnet alberes.sterimed.local
+Valespir:hostname valespir.sterimed.local:telnet valespir.sterimed.local
+EOF
+  )
+
+  echo "$LIST_CONNEXION" | fzf --tmux center \
+    --prompt ' ' \
+    --pointer '󰛂' \
+    --border-label ' SSH Servers ' \
+    --delimiter=':' \
+    --with-nth '{1}' \
+    --preview 'echo {2}' \
+    --bind 'enter:become(telnet $(echo {2} | sed "s/hostname //"))'
+}
+
 bindkey -s '^g^n' 'conn_ssh\n'
+bindkey -s '^g^a' 'conn_telnet\n'
