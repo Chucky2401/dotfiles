@@ -51,6 +51,7 @@
     }
   },
   "widgets": [
+    "mpris",
     "inhibitors",
     "title",
     "dnd",
@@ -76,10 +77,8 @@
       "text": "Label Text"
     },
     "mpris": {
-      "blacklist": [],
-      "autohide": false,
       "show-album-art": "always",
-      "loop-carousel": false
+      "loop-carousel": true
     },
     "buttons-grid": {
       "buttons-per-row": 7,
