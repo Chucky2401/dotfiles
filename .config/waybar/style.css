@@ -78,13 +78,11 @@ window#waybar {
 #battery.warning:not(.charging) {
     background-color: #ffd58b;
     color: #24283b;
-    border-radius: 5px 5px 5px 5px;
 }
 
 #battery.critical:not(.charging) {
     background-color: #f7768e;
     color: #24283b;
-    border-radius: 5px 5px 5px 5px;
 }
 
 #network {
