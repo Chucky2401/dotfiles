@@ -195,12 +195,24 @@
     "group/notifTray": {
       "orientation": "horizontal",
       "modules": [
-        "custom/notification",
+        // "custom/notification",
+        "group/subNotification",
         "tray"
       ],
       "drawer": {
-        "transition-left-to-right": true
+        "transition-left-to-right": true,
+        "click-to-reveal": true
       }
+    },
+    "group/subNotification": {
+      "orientation": "horizontal",
+      "modules": [
+        "custom/openDrawer",
+        "custom/notification"
+      ]
+    },
+    "custom/openDrawer": {
+      "format": ""
     },
     "custom/notification": {
       "tooltip": false,
