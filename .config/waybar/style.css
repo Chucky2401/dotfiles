@@ -117,18 +117,18 @@ window#waybar {
   color: red;
 }
 
-#tray {
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 5px;
-}
-
 #custom-notification {
 	border-radius: 5px 0px 0px 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 10px;
 	padding-right: 15px;
+}
+
+#tray {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
 }
 
 #custom-power {

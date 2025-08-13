@@ -18,17 +18,18 @@
   ],
   "modules-right": [
     "pulseaudio",
-    "group/custom01",
+    "group/hardwNetw",
     // "network",
     // "cpu",
     // "memory",
     // "battery",
     // "bluetooth",
     "custom/vpn",
-    "tray",
-    "group/custom02"
+    "group/notifTrayPower"
     // "custom/notification",
+    // "tray",
     // "custom/power"
+    // NOT USE
     // "temperature",
     // "backlight",
     // "battery#bat2",
@@ -105,7 +106,7 @@
       },
       "on-click": "pavucontrol"
     },
-    "group/custom01": {
+    "group/hardwNetw": {
       "orientation": "horizontal",
       "modules": [
         "battery",
@@ -115,11 +116,11 @@
         "bluetooth"
       ],
       "drawer": {
-          "transition-left-to-right": true
-        }
+        "transition-left-to-right": true
+      }
     },
     //
-    // Start - Group/Custom01
+    // Start - Group/hardwNetw
     //
     "battery": {
       "states": {
@@ -167,7 +168,7 @@
       "on-click": "/usr/bin/blueman-manager"
     },
     //
-    // End - Group/Custom01
+    // End - Group/hardwNetw
     //
     "custom/vpn": {
       "format": "{icon}",
@@ -180,24 +181,26 @@
       "return-type": "json",
       "interval": 5
     },
-    "tray": {
-      // "icon-size": 21,
-      "spacing": 10,
-      // "icons": {
-      //   "blueman": "bluetooth",
-      //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-      // }
-    },
-    "group/custom02": {
+    "group/notifTrayPower": {
       "orientation": "horizontal",
       "modules": [
-        "custom/notification",
+        "group/notifTray",
         "custom/power"
       ]
     },
     //
-    // Start - Group/Custom02
+    // Start - Group/notifTrayPower
     //
+    "group/notifTray": {
+      "orientation": "horizontal",
+      "modules": [
+        "custom/notification",
+        "tray"
+      ],
+      "drawer": {
+        "transition-left-to-right": true
+      }
+    },
     "custom/notification": {
       "tooltip": false,
       "format": "{icon}",
@@ -218,6 +221,14 @@
       "on-click-right": "swaync-client -d",
       "escape": true
     },
+    "tray": {
+      // "icon-size": 21,
+      "spacing": 10,
+      // "icons": {
+      //   "blueman": "bluetooth",
+      //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+      // }
+    },
     "custom/power": {
       "format" : "⏻",
       "tooltip": false,
@@ -232,7 +243,7 @@
       }
     },
     //
-    // End - Group/Custom02
+    // End - Group/notifTrayPower
     //
     //
     // Unused
