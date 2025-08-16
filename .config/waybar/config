@@ -63,30 +63,31 @@
       }
     },
     "clock": {
-      "timezone": "Europe/Paris",
-      "locale": "fr_FR.UTF-8",
+      // "timezone": "Europe/Paris",
+      // "locale": "fr_FR.UTF-8",
       "interval": 1,
-      "format": "<span foreground='#f5c2e7'>  </span>{:%T}",
-      "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-      "format-alt": "{:%A, %B %d, %Y (%R)}",
+      "format": "  {:%T}",
+      // "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+      "tooltip-format": "{calendar}",
+      // "format-alt": "{:%A, %B %d, %Y (%R)}",
       "calendar": {
-        "mode"          : "year",
-        "mode-mon-col"  : 3,
-        "weeks-pos"     : "left",
-        "on-scroll"     : 1,
+        "mode"         : "year",
+        "mode-mon-col" : 3,
+        "weeks-pos"    : "left",
+        "on-scroll"    : 1,
         "format": {
-          "months":     "<span color='#ffead3'><b>{}</b></span>",
-          "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-          "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-          "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-          "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+          "months":   "<span color='#ffead3'><b>{}</b></span>",
+          "days":     "<span color='#ecc6d9'><b>{}</b></span>",
+          "weeks":    "<span color='#99ffdd'><b>W{}</b></span>",
+          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+          "today":    "<span color='#ff6699'><b><u>{}</u></b></span>"
         },
         "actions":  {
           "on-click-right": "mode",
           "on-scroll-up": "shift_up",
           "on-scroll-down": "shift_down"
         }
-      }
+      },
     },
     "pulseaudio": {
       // "scroll-step": 1, // %, can be a float
