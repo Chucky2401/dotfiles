@@ -93,7 +93,8 @@
 }
 
 .notification-row .notification-background .notification .notification-default-action:hover .notification-content .horizontal .text-box .horizontal .summary,
-.notification-row .notification-background .notification .notification-default-action:hover .notification-content .horizontal .text-box .horizontal .time{
+.notification-row .notification-background .notification .notification-default-action:hover .notification-content .horizontal .text-box .body,
+.notification-row .notification-background .notification .notification-default-action:hover .notification-content .horizontal .text-box .horizontal .time {
   color: var(--noti-fg-hover);
 }
 
