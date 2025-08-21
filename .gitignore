@@ -4,3 +4,7 @@
 
 # Pro - Do not sync, sensitive data!
 # .local/share/sh/pro_*
+
+# Files for music plugins
+**/coverart.*
+**/info.txt
