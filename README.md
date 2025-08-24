@@ -205,7 +205,11 @@ cd ~/dotfiles
 Then use GNU Stow to create symlinks:
 
 ```bash
-stow -R .
+# With Hyprland
+stow -R {atuin,eww,flameshot,fuzzel,ghostty,gnupg,hypridle,hyprland,hyprlock,hyprpaper,lazygit,networkmanager-dmenu,nvim,ohmyposh,swaync,tmux,wallpapers,waybar,yazi,zsh}
+
+# Without Hyprland
+stow -R {atuin,ghostty,gnupg,lazygit,nvim,ohmyposh,tmux,wallpapers,yazi,zsh}
 ```
 
 ## Post-Installation
