@@ -1,11 +1,11 @@
 # Tmux
-.config/tmux/plugins/*
-!.config/tmux/plugins/.gitkeep
+tmux/.config/tmux/plugins/*
+!tmux/.config/tmux/plugins/.gitkeep
 
 # Pro - Do not sync, sensitive data!
 # .local/share/sh/pro_*
 
 # Files for music plugins
-.config/hypr/info.txt
-.config/hypr/coverart.jpg
-.config/hypr/coverart.png
+hyprlock/.config/hypr/info.txt
+hyprlock/.config/hypr/coverart.jpg
+hyprlock/.config/hypr/coverart.png

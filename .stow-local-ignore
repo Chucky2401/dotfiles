@@ -20,6 +20,3 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
-
-# Custom ignore
-/\.config/nvim\.nvchad
