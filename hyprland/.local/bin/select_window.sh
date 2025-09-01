@@ -10,9 +10,9 @@ active_window=$(hyprctl -j activewindow)
 current_addr=$(jq -r '.address' <<<"$active_window")
 
 window=$(jq -r '.[] | select(.monitor != -1 ) | "\(.workspace.name);\(.address)\t[\(.workspace.name)] \(.title)@icon@\(.class | ascii_downcase)"' <<<"$state" |
-  sed -e "s|$current_addr|focused ->|" -e 's|@icon@|\x0icon\x1f|' |
-  sort -r |
-  fuzzel --dmenu --prompt "Switch to window > " --placeholder "" --with-nth="2" --accept-nth="1" --width=100 --lines=5)
+  sed -e "s|\($current_addr\)\(\t\[[1-9]\] \)|\1\2󰻿  |" -e 's|@icon@|\x0icon\x1f|' |
+  sort |
+  fuzzel --dmenu --lines=10 --prompt "Switch to window > " --placeholder "" --with-nth="2" --accept-nth="1" --width=100)
 
 addr=$(awk 'BEGIN { FS = ";"} ; {print $2}' <<<"$window")
 ws=$(awk 'BEGIN { FS = ";"} ; {print $1}' <<<"$window")
