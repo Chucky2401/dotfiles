@@ -51,6 +51,7 @@
     }
   },
   "widgets": [
+    "menubar#label",
     "inhibitors",
     "title",
     "dnd",
@@ -59,6 +60,48 @@
     "mpris"
   ],
   "widget-config": {
+    "menubar#label": {
+      "menu#power-buttons": {
+        "label": "",
+        "position": "right",
+        "actions": [
+          {
+            "label": "  Reboot",
+            "command": "systemctl reboot"
+          },
+          {
+            "label": "  Lock",
+            "command": "hyprlock"
+          },
+          {
+            "label": "  Logout",
+            "command": "hyprctl dispatch exit"
+          },
+          {
+            "label": "  Shut down",
+            "command": "systemctl poweroff"
+          }
+        ]
+      },
+      "menu#powermode-buttons": {
+        "label": "󰩲 ",
+        "position": "left",
+        "actions": [
+          {
+            "label": "Performance",
+            "command": "powerprofilesctl set performance"
+          },
+          {
+            "label": "Balanced",
+            "command": "powerprofilesctl set balanced"
+          },
+          {
+            "label": "Power-saver",
+            "command": "powerprofilesctl set power-saver"
+          }
+        ]
+      }
+    },
     "inhibitors": {
       "text": "Inhibitors",
       "button-text": "Clear All",
@@ -96,6 +139,7 @@
           "active": true,
           "command": "sh -c '[[ $(bluetoothctl show | grep \"Powered\" | sed \"'\"s|Powered: ||\"'\" | xargs) == \"yes\" ]] && bluetoothctl power off || bluetoothctl power on'",
           "update-command": "sh -c '[[ $(bluetoothctl show | grep \"Powered\" | sed \"'\"s|Powered: ||\"'\" | xargs) == \"yes\" ]] && echo true || echo false'"
+        },
         }
       ]
     }
