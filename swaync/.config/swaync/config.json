@@ -140,6 +140,11 @@
           "command": "sh -c '[[ $(bluetoothctl show | grep \"Powered\" | sed \"'\"s|Powered: ||\"'\" | xargs) == \"yes\" ]] && bluetoothctl power off || bluetoothctl power on'",
           "update-command": "sh -c '[[ $(bluetoothctl show | grep \"Powered\" | sed \"'\"s|Powered: ||\"'\" | xargs) == \"yes\" ]] && echo true || echo false'"
         },
+        {
+          "label": "",
+          "type": "toggle",
+          "command": "[[ $SWAYNC_TOGGLE_STATE == true ]] && ( systemd-inhibit --why='User request via swaync' --what=sleep:handle-lid-switch sh -c 'echo \"$$\" > \"$XDG_RUNTIME_DIR/swaync-idle.pid\"; while true; do sleep 3600; done' ) || ( sh -c '[[ -e \"$XDG_RUNTIME_DIR/swaync-idle.pid\" ]] && kill -9 $(<\"$XDG_RUNTIME_DIR/swaync-idle.pid\"); rm -f \"$XDG_RUNTIME_DIR/swaync-idle.pid\"')",
+          "update-command": "sh -c 'echo Refresh button...; [[ -e \"$XDG_RUNTIME_DIR/swaync-idle.pid\" ]] && echo true || echo false'"
         }
       ]
     }
