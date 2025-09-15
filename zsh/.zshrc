@@ -1,6 +1,13 @@
 # Import custom functions
-# for script in ~/.local/share/sh/*.sh ; do
+# From the git repo
 for script in $(find ~/.local/share/sh/ -name "*.sh") ; do
+  if [ -r "$script" ] ; then
+    . "$script"
+  fi
+done
+
+# Only on local machine
+for script in $(find ~/.local/share/sh/ -maxdepth 1 -type f -name "*.sh") ; do
   if [ -r "$script" ] ; then
     . "$script"
   fi
