@@ -66,7 +66,7 @@
       // "timezone": "Europe/Paris",
       // "locale": "fr_FR.UTF-8",
       "interval": 1,
-      "format": "  {:%T}",
+      "format": "  {:%T, %d/%m/%y}",
       // "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
       "tooltip-format": "{calendar}",
       // "format-alt": "{:%A, %B %d, %Y (%R)}",
@@ -213,7 +213,8 @@
       ]
     },
     "custom/openDrawer": {
-      "format": ""
+      "format": "",
+      "tooltip": false
     },
     "custom/notification": {
       "tooltip": false,
