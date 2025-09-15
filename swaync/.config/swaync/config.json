@@ -44,8 +44,8 @@
     }
   },
   "notification-visibility": {
-    "example-name": {
-      "state": "muted",
+    "Spotify-song-change": {
+      "state": "ignored",
       "urgency": "Low",
       "app-name": "Spotify"
     }
