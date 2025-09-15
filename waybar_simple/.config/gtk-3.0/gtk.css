@@ -1,0 +1,17 @@
+.shutdown-red {
+  color: #f7768e;
+}
+
+.shutdown-red:hover {
+  background-color: #b83a2d;
+  color: #7dcfff;
+}
+
+.delimiter1 separator {
+  border-top: 2px solid #f7768e;
+  border-bottom: 0;
+  background: none;
+  background-image: none;
+  min-height: 1px;
+  opacity: 1;
+}

@@ -1,0 +1,152 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: MesloLGS Nerd Font;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(32, 34, 51, 0.6);
+  color: #c0caf5;
+}
+
+#workspaces {
+  background-color: #202233;
+  margin: 5px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+#workspaces button {
+  padding: 5px 10px;
+  color: #c0caf5;
+}
+
+#workspaces button.focused {
+  color: #75C2EF;
+  border-radius: 5px;
+}
+
+#workspaces button:hover {
+  background-color: #7dcfff;
+  color: #24283b;
+  border-radius: 5px;
+}
+
+#clock,
+#custom-date,
+#pulseaudio,
+#battery,
+#network,
+#cpu,
+#memory,
+#bluetooth,
+#custom-vpn,
+#tray,
+#custom-openDrawer,
+#custom-notification,
+#keyboard-state {
+  background-color: #202233;
+  padding: 5px 10px;
+  margin: 5px 0px;
+}
+
+#clock {
+  color: #c0caf5;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+tooltip {
+  background-color: rgba(32, 34, 51, 0.9);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#custom-date {
+  color: #c0caf5;
+}
+
+#pulseaudio {
+  color: #c0caf5;
+}
+
+#battery {
+  color: #c0caf5;
+  padding-left: 0;
+}
+
+#battery.charging {
+  color: #6effac;
+}
+
+#battery.warning:not(.charging) {
+  color: #ffd58b;
+}
+
+#battery.critical:not(.charging) {
+  color: #f7768e;
+}
+
+#network {
+  color: #c0caf5;
+}
+
+#cpu {
+  color: #c0caf5;
+  margin-right: 0;
+}
+
+#memory {
+  color: #c0caf5;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+#bluetooth {
+  color: #c0caf5;
+}
+
+#bluetooth.off, #bluetooth.disabled {
+  color: red;
+}
+
+#custom-vpn.tbrejon {
+  color: blue;
+}
+
+#custom-vpn.adm_tbrejon {
+  color: red;
+}
+
+#custom-openDrawer {
+  border-radius: 5px 0px 0px 5px;
+}
+
+#custom-notification {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 15px;
+}
+
+#tray {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+}
+
+#custom-power {
+  color: #24283b;
+  background-color: #db4b4b;
+  border-radius: 0px 5px 5px 0px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 15px;
+}
