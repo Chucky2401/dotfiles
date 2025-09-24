@@ -7,7 +7,7 @@ for script in $(find ~/.local/share/sh/ -name "*.sh") ; do
 done
 
 # Only on local machine
-for script in $(find ~/.local/share/sh/ -maxdepth 1 -type f -name "*.sh") ; do
+for script in $(find ~/.local/ -maxdepth 1 -type f -name "*.sh") ; do
   if [ -r "$script" ] ; then
     . "$script"
   fi
