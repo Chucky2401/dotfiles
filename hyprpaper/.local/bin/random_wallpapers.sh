@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+while ! pidof hyprpaper &>/dev/null; do
+  sleep 1
+done
+
 ROOT_WALLPAPER_DIR="$HOME/.wallpapers/"
 TYPE_WALLPAPER="${ROOT_WALLPAPER_DIR}$1/"
 CURRENT_WALLPAPER=$(hyprctl hyprpaper listloaded)
