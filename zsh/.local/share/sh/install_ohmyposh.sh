@@ -50,6 +50,10 @@ install_ohmyposh() {
   fi
 
   if version_lessthan "$OMP_VERSION_INSTALLED" "$OMP_VERSION_GIT"; then
-    execute "oh-my-posh" "upgrade"
+    execute "oh-my-posh" "upgrade" >/tmp/install_ohmyposh
+
+    if grep -q "\--force to upgrade" /tmp/install_ohmyposh; then
+      execute "oh-my-posh" "upgrade" "--force"
+    fi
   fi
 }
