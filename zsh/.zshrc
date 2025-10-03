@@ -276,11 +276,15 @@ unset DATE_NOW_FORMAT
 unset OS_NAME
 
 # Zoxide
-eval "$(zoxide init --cmd cd zsh)"
+if type zoxide &>/dev/null; then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
 
 # Atuin
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh)"
+if type atuin &>/dev/null; then
+  . "$HOME/.atuin/bin/env"
+  eval "$(atuin init zsh)"
+fi
 
 # Fortune with cowsay
 # Because is funny
