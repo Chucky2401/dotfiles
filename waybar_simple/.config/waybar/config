@@ -235,7 +235,8 @@
     },
     "custom/notification": {
       "tooltip": false,
-      "format": "{icon}",
+      "format": "{icon} <sup>{text}</sup>",
+      // "format": "Sway",
       "format-icons": {
         "notification": "<span foreground='red'><sup></sup></span>",
         "none": "",
