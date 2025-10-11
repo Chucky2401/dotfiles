@@ -39,7 +39,7 @@ clear_ssh() {
     fi
   done
 
-  message "SSH agent environment variables have been removed successfully!"
+  succes_message "SSH agent environment variables have been removed successfully!"
 
   echo -n "Would you like to start the SSH agent? "
   read -r startSshAgent
