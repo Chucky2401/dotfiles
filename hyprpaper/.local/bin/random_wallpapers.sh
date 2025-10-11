@@ -4,6 +4,8 @@ while ! pidof hyprpaper &>/dev/null; do
   sleep 1
 done
 
+sleep 1
+
 ROOT_WALLPAPER_DIR="$HOME/.wallpapers/"
 TYPE_WALLPAPER="${ROOT_WALLPAPER_DIR}$1/"
 CURRENT_WALLPAPER=$(hyprctl hyprpaper listloaded)
