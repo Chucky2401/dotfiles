@@ -44,7 +44,7 @@ clear_ssh() {
   echo -n "Would you like to start the SSH agent? "
   read -r startSshAgent
 
-  if [[ "${startSshAgent}" -eq "o" ]]; then
+  if [[ "${startSshAgent}" == "o" ]]; then
     start_ssh_agent
   fi
 }
