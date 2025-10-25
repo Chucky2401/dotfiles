@@ -68,7 +68,7 @@ alias fortiadmstart='_forti_wrapper forticlient vpn connect 0_Palalda --user=adm
 alias fortistatus='forticlient vpn status'
 alias fortistop='forticlient vpn disconnect'
 
-bindkey -s '^g^v' 'vpn\n'
+bindkey -M viins -s '^g^v' 'vpn\n'
 
 function fortiswitch() {
   currentUser=$(fortistatus | grep Username | cut -d ":" -f 2 | xargs)

@@ -34,5 +34,5 @@ EOF
     --bind 'enter:become(telnet $(echo {2} | sed "s/hostname //"))'
 }
 
-bindkey -s '^g^n' 'conn_ssh\n'
-bindkey -s '^g^a' 'conn_telnet\n'
+bindkey -M viins -s '^g^n' 'conn_ssh\n'
+bindkey -M viins -s '^g^a' 'conn_telnet\n'
