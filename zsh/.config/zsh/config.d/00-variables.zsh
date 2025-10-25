@@ -38,4 +38,6 @@ if cat /etc/group | grep -qw 'wheel'; then
 	SUDO_GROUP="wheel"
 fi
 
+export EDITOR=nvim
+
 # ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
