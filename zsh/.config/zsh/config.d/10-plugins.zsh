@@ -79,7 +79,7 @@ if type atuin &>/dev/null; then
   eval "$(atuin init zsh)"
 fi
 
-if type terraform; then
+if type terraform &>/dev/null; then
   autoload -U +X bashcompinit && bashcompinit
   complete -o nospace -C /usr/bin/terraform terraform
 fi
