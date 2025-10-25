@@ -3,4 +3,4 @@ sync_frequency = "30m"
 inline_height = 20
 enter_accept = true
 keymap_mode = "vim-normal"
-keymap_cursor = { emacs = "blink-block", vim_insert = "blink-block", vim_normal = "steady-block" }
+keymap_cursor = { emacs = "blink-block", vim_insert = "steady-bar", vim_normal = "steady-block" }
