@@ -4,6 +4,7 @@ tmux/.config/tmux/plugins/*
 
 # RHEL or Alpine distribution
 zsh/.local/share
+zsh/.local/state
 
 # Pro - Do not sync, sensitive data!
 # .local/share/sh/pro_*
