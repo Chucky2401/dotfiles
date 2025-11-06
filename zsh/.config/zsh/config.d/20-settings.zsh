@@ -27,7 +27,7 @@ if type docker &>/dev/null; then
 fi
 
 # FZF customisation
-if which fdfind > /dev/null; then
+if which fdfind &>/dev/null; then
 	FD_BINARY=$(which fdfind | rev | cut -d'/' -f 1 | rev)
 else
 	FD_BINARY=$(which fd | rev | cut -d'/' -f 1 | rev)
