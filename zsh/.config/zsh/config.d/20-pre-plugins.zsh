@@ -73,12 +73,6 @@ zinit cdreplay -q
 
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/mytheme.omp.json)"
 
-# Atuin
-if type atuin &>/dev/null; then
-  . "$HOME/.atuin/bin/env"
-  eval "$(atuin init zsh)"
-fi
-
 if type terraform &>/dev/null; then
   autoload -U +X bashcompinit && bashcompinit
   complete -o nospace -C /usr/bin/terraform terraform
