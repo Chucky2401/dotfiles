@@ -3,7 +3,8 @@ tmux/.config/tmux/plugins/*
 !tmux/.config/tmux/plugins/.gitkeep
 
 # RHEL or Alpine distribution
-zsh/.local/share
+zsh/.local/share/*
+!zsh/.local/share/sh/
 zsh/.local/state
 
 # Pro - Do not sync, sensitive data!
