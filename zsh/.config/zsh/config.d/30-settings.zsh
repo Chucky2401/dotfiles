@@ -70,14 +70,6 @@ export GPG_TTY=$(tty)
 # Start SSH Agent
 start_ssh_agent
 
-unset script
-unset ZSH_NEXT_UPDATE ZINIT_INSTALL FZF_INSTALL FZF_GIT_INSTALL
-unset DATE_NEXT_UPDATE DATE_NOW_FORMAT
-unset OMP_DIR OMP_FULL_PATH
-unset DATE_NEXT_UPDATE
-unset DATE_NOW_FORMAT
-unset OS_NAME
-
 # Zoxide
 if type zoxide &>/dev/null; then
   eval "$(zoxide init --cmd cd zsh)"
