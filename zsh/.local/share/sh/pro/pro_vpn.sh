@@ -1,5 +1,6 @@
 function _forti_wrapper() {
-  trap "tput rmcup; return" SIGINT
+  trap "trap -; tput rmcup; return" 2
+  # trap "printf '\e[?1049l'; return" SIGINT
   sleep=3
 
   while getopts "s:" opt; do
@@ -30,6 +31,7 @@ function _forti_wrapper() {
 
   sleep ${sleep}
   tput rmcup
+  trap -
 }
 
 function vpn() {
@@ -68,7 +70,7 @@ alias fortiadmstart='_forti_wrapper forticlient vpn connect 0_Palalda --user=adm
 alias fortistatus='forticlient vpn status'
 alias fortistop='forticlient vpn disconnect'
 
-bindkey -M viins -s '^g^v' 'vpn\n'
+bindkey -s '^g^v' 'vpn\n'
 
 function fortiswitch() {
   currentUser=$(fortistatus | grep Username | cut -d ":" -f 2 | xargs)
