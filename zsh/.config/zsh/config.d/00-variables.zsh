@@ -1,4 +1,5 @@
 # Configuration
+ZSH_SKIP_UPDATE="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/skip_update"
 ZSH_NEXT_UPDATE="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/next_update"
 USER_LOCAL_BIN="${XDG_DATA_HOME:-${HOME}}/.local/bin"
 ZINIT_INSTALL=0

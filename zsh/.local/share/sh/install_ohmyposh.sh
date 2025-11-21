@@ -1,7 +1,7 @@
 install_ohmyposh() {
-  if type oh-my-posh &>/dev/null && ! [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
-    return
-  fi
+  # if type oh-my-posh &>/dev/null && ! [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
+  #   return
+  # fi
 
   if [[ $(id -u) -ne 0 ]]; then
     message "Install/Update Oh-My-Posh (which may request your password)..."

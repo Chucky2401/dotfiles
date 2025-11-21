@@ -41,7 +41,9 @@ fi
 install_zoxide
 
 # Oh-my-posh
-install_ohmyposh
+if ! type oh-my-posh &>/dev/null || (type oh-my-posh &>/dev/null && [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" && ! -e "$ZSH_SKIP_UPDATE" ]]); then
+  install_ohmyposh
+fi
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
