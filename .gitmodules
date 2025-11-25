@@ -1,6 +1,6 @@
 [submodule "dotfiles_pro"]
   path = zsh/.local/share/sh/pro
-  url = git@github.com:Chucky2401/dotfiles_pro.git
+	url = ssh://forgejo@lxc-forgejo.intranet.blackwizard.fr/Linux/dotfiles_pro.git
   branch = main
 [submodule "tpm"]
   path = tmux/.tmux/plugins/tpm
