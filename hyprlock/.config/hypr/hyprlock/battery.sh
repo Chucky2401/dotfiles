@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+REMAINING=""
+
 BAT_INFO=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
 
 STATE=$(echo "$BAT_INFO" | grep "state: " | sed 's/ *state: *//')
@@ -24,8 +26,12 @@ if [[ "$STATE" != "discharging" ]]; then
   # exit 0
 fi
 
+if [[ -n $REMAINING ]]; then
+  REMAINING="($REMAINING)"
+fi
+
 PERCENTAGE=$(echo "$BAT_INFO" |
   grep "percentage: " |
   sed 's/ *percentage: *\([[:digit:]]*\)%/\1 %/')
 
-echo "$ICON$PERCENTAGE ($REMAINING)"
+echo "$ICON$PERCENTAGE $REMAINING"
