@@ -77,14 +77,15 @@
               "fix/*": "🐛 "
             },
             "upstream_icons": {
-              "forgejo.sterimed.local": ""
+              "forgejo.sterimed.local": "",
+              "lxc-forgejo.intranet.blackwizard.fr": ""
             }
           },
           "style": "powerline",
           "template": " {{ .UpstreamIcon }} {{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} | {{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}}  {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}}  {{ .WorktreeCount }}{{ end }} ",
           "foreground": "#193549",
           "powerline_symbol": "",
-        "background": "#68b272",
+          "background": "#68b272",
           "type": "git",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#Fccbc2f{ end }}",
