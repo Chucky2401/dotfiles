@@ -141,11 +141,12 @@
     },
     "network": {
       "format-wifi": "{essid} ({signalStrength}%)  ",
-      "format-ethernet": "{ipaddr}/{cidr} 󰈀 ",
+      // "format-ethernet": "{ipaddr}/{cidr} 󰈀 ",
+      "format-ethernet": "{bandwidthTotalBits} 󰈀 ",
       // "tooltip-format": "{ifname} via {gwaddr} 󰈀 ",
       "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
       "format-linked": "{ifname} (No IP) ",
-      "format-disconnected": "Disconnected ⚠",
+      "format-disconnected": "Disc. ⚠",
       "on-click": "networkmanager_dmenu"
       // "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
