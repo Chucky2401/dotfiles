@@ -5,6 +5,10 @@ if [ ! -d "$ZINIT_HOME" ]; then
 	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+# Clean brokens completions symlink
+find $HOME/.local/share/zinit/completions/ -type l \
+  ! -exec test -e {} \; -delete
+
 # Set-up fzf with git if not Arch
 if [[ "$OS_NAME" != "Arch" ]]; then
 	# Set the directory for fzf
