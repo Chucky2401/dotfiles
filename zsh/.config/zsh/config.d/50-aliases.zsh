@@ -17,6 +17,7 @@ alias llt="ll --sort=modified"
 alias lltr="ll --sort=oldest"
 alias lat="la --sort=modified"
 alias latr="la --sort=oldest"
+alias tmux="tmux a || tmux"
 
 alias susu="sudo su -"
 alias vi="nvim"
