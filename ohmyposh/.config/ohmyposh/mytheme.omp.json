@@ -16,7 +16,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "debian": " ",
             "raspbian": " ",
             "windows": " ",
@@ -28,9 +28,6 @@
           "type": "os"
         },
         {
-          "properties": {
-            "style": "full"
-          },
           "style": "powerline",
           "powerline_symbol": "",
           "trailing_diamond": ":",
@@ -42,7 +39,7 @@
           "type": "session"
         },
         {
-          "properties": {
+          "options": {
             "folder_icon": " ",
             "folder_separator_icon": "/",
             "home_icon": " ",
@@ -69,7 +66,7 @@
           "template": "  {{ .Full }} "
         },
         {
-          "properties": {
+          "options": {
             "fetch_status": true,
             "fetch_upstream_icon": true,
             "mapped_branches": {
@@ -103,9 +100,8 @@
       "filler": "<#ffffff,transparent>·</>",
       "segments": [
         {
-          "properties": {
+          "options": {
             "always_enabled": true,
-            "cache_duration": "none",
             "status_template": "{{ if eq .Code 0 }} \uf00c {{ else }} \uf00d {{ .Code }} {{ end }}"
           },
           "template": "{{ .String }}",
@@ -119,9 +115,8 @@
           ]
         },
         {
-          "properties": {
-            "always_enabled": true,
-            "cache_duration": "none"
+          "options": {
+            "always_enabled": true
           },
           "template": " {{ .FormattedMs }} ",
           "foreground": "#ffffff",
@@ -132,8 +127,7 @@
           "min_width": 96
         },
         {
-          "properties": {
-            "cache_duration": "none",
+          "options": {
             "mapped_shell_names": {
               "powershell": "\ue683",
               "pwsh": "\uebc7",
@@ -149,9 +143,6 @@
           "min_width": 90
         },
         {
-          "properties": {
-            "cache_duration": "none"
-          },
           "template": " {{ .CurrentDate | date .Format }} ",
           "foreground": "#111111",
           "powerline_symbol": "\ue0b4",
@@ -167,7 +158,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "always_enabled": true,
             "cache_duration": "none"
           },
