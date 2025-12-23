@@ -75,7 +75,8 @@
             },
             "upstream_icons": {
               "forgejo.sterimed.local": "",
-              "lxc-forgejo.intranet.blackwizard.fr": ""
+              "lxc-forgejo.intranet.blackwizard.fr": "",
+              "forgejo.intranet.blackwizard.fr": ""
             }
           },
           "style": "powerline",
