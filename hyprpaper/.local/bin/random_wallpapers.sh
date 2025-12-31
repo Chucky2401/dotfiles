@@ -20,4 +20,4 @@ fi
 
 WALLPAPER=$(find "$TYPE_WALLPAPER" -type f ! -name "$(basename "$CURRENT_WALLPAPER")" | shuf -n 1)
 
-hyprctl hyprpaper reload ,"contain:$WALLPAPER"
+hyprctl hyprpaper wallpaper ,"$WALLPAPER, contain"
