@@ -2,6 +2,7 @@
 bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey '^b^l' clear-screen
 # Useless if PuTTy set with 'xterm' for Home and End keys
 bindkey '^[[1~' beginning-of-line
 bindkey '^[[4~' end-of-line
