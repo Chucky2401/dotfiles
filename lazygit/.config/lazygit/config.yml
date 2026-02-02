@@ -3,10 +3,12 @@ gui:
   switchTabsWithPanelJumpKeys: true
   nerdFontsVersion: "3"
   wrapLinesInStagingView: true
+  useHunkModeInStagingView: false
 promptToReturnFromSubprocess: true
 os:
   edit: "nvim {{filename}}"
   editPreset: 'nvim'
+  shellFunctionsFile: ~/.config/zsh/config.d/50-aliases.zsh
 customCommands: 
   - key: '<c-P>'
     description: "Push to a specific remote repository"
