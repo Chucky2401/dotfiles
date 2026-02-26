@@ -28,9 +28,9 @@ export DATE_NOW_FORMAT="$(date +"%Y-%m-%dT%H-%M-%S%:z")"
 
 # First set LANG
 if locale -a | grep -q "fr_FR.utf8"; then
-  export LANG=fr_FR.utf8
+  export LANG=fr_FR.UTF-8
 else
-  export LANG=en_US.utf8
+  export LANG=en_US.UTF-8
 fi
 
 # Set the directory we want to store zinit and plugins
