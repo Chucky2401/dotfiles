@@ -27,7 +27,11 @@ export DATE_NEXT_UPDATE="$(cat $ZSH_NEXT_UPDATE)"
 export DATE_NOW_FORMAT="$(date +"%Y-%m-%dT%H-%M-%S%:z")"
 
 # First set LANG
-export LANG=fr_FR.UTF-8
+if locale -a | grep -q "fr_FR.utf8"; then
+  export LANG=fr_FR.utf8
+else
+  export LANG=en_US.utf8
+fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
