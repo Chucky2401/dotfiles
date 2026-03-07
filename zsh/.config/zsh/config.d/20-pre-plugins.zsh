@@ -42,7 +42,9 @@ if [[ $FZF_GIT_INSTALL -eq 0 && "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; the
 fi
 
 # Zoxide for Debian or Ubuntu system only
-install_zoxide
+if ! type zoxide &>/dev/null || (type zoxide &>/dev/null && [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" && ! -e "$ZSH_SKIP_UPDATE" ]]); then
+  install_zoxide
+fi
 
 # Oh-my-posh
 if ! type oh-my-posh &>/dev/null || (type oh-my-posh &>/dev/null && [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" && ! -e "$ZSH_SKIP_UPDATE" ]]); then
