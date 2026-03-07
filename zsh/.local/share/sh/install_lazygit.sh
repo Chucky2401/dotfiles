@@ -1,4 +1,8 @@
 install_lazygit() {
+  if ! [[ "$OS_NAME" =~ "Debian|Ubuntu" ]]; then
+    return
+  fi
+
   if [[ $(id -u) -ne 0 ]]; then
     message "Install/Update Lazygit (which may request your password)..."
     FUNCTIONS=$(declare -f version_lessthan install_lazygit)
