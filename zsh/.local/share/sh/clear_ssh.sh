@@ -10,7 +10,7 @@ clear_ssh() {
 
   if [[ $rmStatus -ne 0 ]]; then
     error_message "Cannot kill the SSH agent. Aborting!"
-    exit 1
+    return 1
   fi
 
   message "Cleaning ssh agent..."
@@ -23,7 +23,7 @@ clear_ssh() {
     success_message "Files ~/.ssh/ssh_a* have been remove successfully!"
   else
     error_message "Files ~/.ssh/ssh_a* don't have been remove successfully!"
-    exit 1
+    return 1
   fi
 
   message "Unset SSH agent environment variables..."
@@ -35,7 +35,7 @@ clear_ssh() {
 
     if [[ $unsetStatus -ne 0 ]]; then
       error_message "Environment variable ${i} doesn't have been unset successfully!"
-      exit 1
+      return 1
     fi
   done
 
