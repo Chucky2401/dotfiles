@@ -41,7 +41,7 @@ clear_ssh() {
 
   succes_message "SSH agent environment variables have been removed successfully!"
 
-  echo -n "Would you like to start the SSH agent? "
+  echo -n "Would you like to start the SSH agent? [o/N] "
   read -r startSshAgent
 
   if [[ "${startSshAgent}" == "o" ]]; then
