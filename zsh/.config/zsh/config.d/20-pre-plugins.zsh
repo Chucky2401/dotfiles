@@ -51,6 +51,11 @@ if ! type oh-my-posh &>/dev/null || (type oh-my-posh &>/dev/null && [[ "$DATE_NE
   install_ohmyposh
 fi
 
+# Lazygit
+if ! type lazygit &>/dev/null || (type lazygit &>/dev/null && [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" && ! -e "$ZSH_SKIP_UPDATE" ]]); then
+  install_lazygit
+fi
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 if [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
