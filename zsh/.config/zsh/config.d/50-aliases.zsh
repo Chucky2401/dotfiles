@@ -29,6 +29,6 @@ alias dfh="echo "" ; df -h | tail -n +2 | column -t -N Device,Size,Used,Availabl
 alias cleardns="resolvectl flush-caches"
 alias weather="curl wttr.in/Saint-Jean-Pla-De-Corts"
 
-# Alias Docker Pi3
-alias syncpi3='rsync -avze "ssh -p 666" /home/docker_pi3/* --progress blackwizard@192.168.1.40:/home/docker/'
-alias synchp='rsync -avze "ssh -p 666" /home/docker_hp/* --progress blackwizard@192.168.1.250:/home/docker/'
+# Alias Docker
+alias syncpi3='rsync -avzP /home/docker_pi3/* raspberry:/home/docker/'
+alias synchp='rsync -avzP /home/docker_hp/* docker01:/home/docker/'
