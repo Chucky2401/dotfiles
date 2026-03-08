@@ -25,7 +25,6 @@ alias lg="lazygit"
 alias ld="lazydocker"
 
 # Utile
-alias fman="compgen -c | fzf | xargs man"
 alias dfh="echo "" ; df -h | tail -n +2 | column -t -N Device,Size,Used,Available,\"Used %\",Mountpoint ; echo"
 alias cleardns="resolvectl flush-caches"
 alias weather="curl wttr.in/Saint-Jean-Pla-De-Corts"
