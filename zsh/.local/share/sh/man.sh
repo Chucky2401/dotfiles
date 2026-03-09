@@ -1,6 +1,6 @@
 function fm() {
   BAT_BIN="bat"
-  if ! [[ "$OS_NAME" =~ "Debian|Ubuntu" ]]; then
+  if [[ "$OS_NAME" =~ "Debian|Ubuntu" ]]; then
     BAT_BIN="batcat"
   fi
   /usr/bin/man -k . | awk '{printf "%s:%s", $1, gensub(/\(|\)/,"","g",$2); printf "\n"}' | sort | fzf \
