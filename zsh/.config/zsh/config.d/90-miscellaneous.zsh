@@ -1,3 +1,8 @@
+# Link batcat
+if [[ "$OS_NAME" =~ "Debian|Ubuntu" && -f /usr/bin/batcat && ! -e ~/.local/bin/bat ]]; then
+  ln -s /usr/bin/batcat ~/.local/bin/bat
+fi
+
 # Fortune with cowsay
 # Because is funny
 if type fortune &>/dev/null && type cowsay &>/dev/null && type lolcat &>/dev/null; then
