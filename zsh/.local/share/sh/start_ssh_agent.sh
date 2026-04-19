@@ -11,7 +11,14 @@ function start_ssh_agent() {
     message "Starting SSH agent..."
     eval $(ssh-agent -a "$HOME_SSH_SOCK") &>/dev/null
     echo "$SSH_AGENT_PID" >"$HOME_SSH_PID"
-    ssh-add -k
+    # ssh-add -k
+    while IFS= read -r -d '' keyfile; do
+      if grep -qE "^-----BEGIN (OPENSSH|RSA|EC|DSA) PRIVATE KEY-----" "$keyfile"; then
+        message "Add key: $keyfile"
+        # echo "$keyfile"
+        SSH_ASKPASS_REQUIRE=never ssh-add -q "$keyfile"
+      fi
+    done < <(find ~/.ssh -maxdepth 1 -type f -print0)
     success_message "SSH agent start with '$HOME_SSH_SOCK'"
   # else
   #   message "SSH agent on '$HOME_SSH_SOCK' ($(cat $HOME_SSH_PID))"
