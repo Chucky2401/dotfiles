@@ -4,7 +4,7 @@ if [[ "$OS_NAME" =~ "Debian|Ubuntu" && -f /usr/bin/batcat && ! -e ~/.local/bin/b
     mkdir ~/.local/bin/bat
   fi
 
-  ln -s ~/.local/bin/bat /usr/bin/batcat
+  ln -s /usr/bin/batcat ~/.local/bin/bat
 fi
 
 # Fortune with cowsay
