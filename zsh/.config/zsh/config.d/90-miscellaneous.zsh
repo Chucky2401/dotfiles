@@ -1,7 +1,7 @@
 # Link batcat
 if [[ "$OS_NAME" =~ "Debian|Ubuntu" && -f /usr/bin/batcat && ! -e ~/.local/bin/bat ]]; then
-  if [[ -d ~/.local/bin/bat ]]; then
-    mkdir ~/.local/bin/bat
+  if [[ -d "~/.local/bin" ]]; then
+    mkdir ~/.local/bin
   fi
 
   ln -s /usr/bin/batcat ~/.local/bin/bat
