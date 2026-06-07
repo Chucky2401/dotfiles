@@ -10,7 +10,7 @@ os:
   editPreset: 'nvim'
   shellFunctionsFile: ~/.config/zsh/config.d/50-aliases.zsh
 customCommands: 
-  - key: '<c-P>'
+  - key: '<ctrl+shift+p>'
     description: "Push to a specific remote repository"
     context: 'global'
     loadingText: 'Pushing to...'
