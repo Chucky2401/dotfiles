@@ -9,7 +9,7 @@ command = "apropos . | sort"
 
 [preview]
 # Show the man page for the selected entry
-command = "man {regex_extract:\\((.+)\\):1} '{0}' | bat --color=always -l man -p"
+command = "man {regex_extract:\\((\\d+)\\):1} '{0}' | bat --color=always -l man -p"
 env = { "MANWIDTH" = "80" }
 
 [keybindings]
@@ -17,7 +17,7 @@ enter = "actions:open"
 
 [actions.open]
 description = "Open the selected man page in the system pager"
-command = "man {regex_extract:\\((.+)\\):1} '{0}' | bat -l man -p"
+command = "man {regex_extract:\\((\\d+)\\):1} '{0}' | bat -l man -p"
 mode = "execute"
 
 [ui]
