@@ -15,3 +15,12 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.camel.yaml", "*.camel.yml" },
+  callback = function()
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+  end,
+  group = vim.api.nvim_create_augroup("camel_yaml_indent", { clear = true }),
+})
