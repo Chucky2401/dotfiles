@@ -27,3 +27,7 @@ keymap.set("n", "<a-B>", "<cmd>BufferLineMovePrev<cr>", { desc = "Move Buffer Pr
 
 -- Util
 keymap.set("v", "<leader>ct", ":!column -t -s '|' -o '|'<cr>", { desc = "Formatting markdow table" })
+keymap.set("n", "<leader>qD", function()
+  require("persistence").stop()
+  vim.cmd("qa")
+end, { desc = "Don't Save Session & Quit All" })
