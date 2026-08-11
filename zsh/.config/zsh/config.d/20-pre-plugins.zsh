@@ -61,7 +61,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 if [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
 	message "Update Zinit"
 	zinit self-update &> /dev/null
-	zinit update &> /dev/null
+	zinit update --all &> /dev/null
 	date -d "+10 days" +"%Y-%m-%dT%H-%M-%S" > $ZSH_NEXT_UPDATE
 fi
 
