@@ -17,6 +17,7 @@
       }
    },
    "favorites": [
+      "applications:bitwarden",
       "applications:vivaldi-stable",
       "clipboard:history"
    ],
