@@ -4,5 +4,5 @@
   branch = main
 [submodule "tpm"]
   path = tmux/.tmux/plugins/tpm
-  url = https://github.com/tmux-plugins/tpm
+	url = https://github.com/tmuxpack/tpack
   branch = master
