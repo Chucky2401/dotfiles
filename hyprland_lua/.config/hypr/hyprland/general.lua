@@ -26,6 +26,11 @@ hl.monitor({
 -- Variables --
 --
 hl.config({
+	debug = {
+		gl_debugging = false,
+		disable_logs = true,
+	},
+
 	general = {
 		gaps_in = 5,
 		gaps_out = 10,
