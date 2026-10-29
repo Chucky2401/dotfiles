@@ -4,3 +4,8 @@ inline_height = 20
 enter_accept = true
 keymap_mode = "vim-normal"
 keymap_cursor = { emacs = "blink-block", vim_insert = "steady-bar", vim_normal = "steady-block" }
+
+[tmux]
+enabled = true
+width = "80%"
+height = "60%"
