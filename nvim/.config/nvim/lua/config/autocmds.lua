@@ -24,3 +24,12 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
   group = vim.api.nvim_create_augroup("camel_yaml_indent", { clear = true }),
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "Jenkinsfile", "Jenkinsfile.*" },
+  callback = function()
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+  end,
+  group = vim.api.nvim_create_augroup("jenkinsfile_indent", { clear = true }),
+})
