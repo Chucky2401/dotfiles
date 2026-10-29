@@ -56,6 +56,12 @@ if ! type lazygit &>/dev/null || (type lazygit &>/dev/null && [[ "$DATE_NEXT_UPD
   install_lazygit
 fi
 
+# Update LazyVim
+if type nvim &>/dev/null && [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" && ! -e "$ZSH_SKIP_UPDATE" ]]; then
+  message "Update Lazyvim..."
+  nohup nvim --headless "+Lazy! sync" +qa &>/dev/null
+fi
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 if [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" ]]; then
