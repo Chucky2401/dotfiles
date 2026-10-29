@@ -145,3 +145,13 @@ hl.window_rule({
 	size = { 1900, 90 },
 	opacity = "0.8",
 })
+
+-- Bitwarden
+hl.window_rule({
+	name = "Bitwarden Vivaldi",
+	match = {
+		title = "Bitwarden - Vivaldi",
+	},
+	float = true,
+	size = { 500, 625 },
+})
