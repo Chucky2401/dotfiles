@@ -162,18 +162,23 @@ hl.bind(
 	hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"),
 	{ locked = true, repeating = true }
 )
+-- hl.bind(
+-- 	"XF86AudioMicMute",
+-- 	hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"),
+-- 	{ locked = true, repeating = true }
+-- )
 hl.bind(
 	"XF86AudioMicMute",
-	hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"),
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
+-- hl.bind(
+-- 	"CTRL + SHIFT + M",
+-- 	hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"),
+-- 	{ locked = true, repeating = true }
+-- )
 hl.bind(
-	modCtrl .. "SHIFT + M",
-	hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"),
-	{ locked = true, repeating = true }
-)
-hl.bind(
-	modCtrl .. "SHIFT + M",
+	"CTRL + SHIFT + M",
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
