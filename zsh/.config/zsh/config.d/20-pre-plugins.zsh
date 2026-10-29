@@ -1,3 +1,7 @@
+# Variables
+HERDR_INSTALL=0
+IN_HERDR=0
+
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
   message "Install Zinit"
@@ -60,6 +64,37 @@ fi
 if type nvim &>/dev/null && [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" && ! -e "$ZSH_SKIP_UPDATE" ]]; then
   message "Update Lazyvim..."
   nohup nvim --headless "+Lazy! sync" +qa &>/dev/null
+fi
+
+# Herdr
+# curl -fsSL https://herdr.dev/install.sh | sh
+type herdr &>/dev/null && HERDR_INSTALL=1
+[[ $HERDR_INSTALL -eq 1 ]] && [[ -v HERDR_ENV ]] && IN_HERDR=1
+
+if [[ $HERDR_INSTALL -eq 0 ]]; then
+  message "Install Herdr..."
+  curl -fsSL https://herdr.dev/install.sh | sh
+fi
+
+if [[ $HERDR_INSTALL -eq 1 ]] && [[ $IN_HERDR -eq 0 ]] && [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" && ! -e "$ZSH_SKIP_UPDATE" ]]; then
+  message "Update Herdr..."
+  herdr update
+fi
+
+if [[ $HERDR_INSTALL -eq 1 ]] && [[ $IN_HERDR -eq 1 ]] && [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" && ! -e "$ZSH_SKIP_UPDATE" ]]; then
+  message "Skip updating Herdr as connecting..."
+fi
+
+# Herdr plugins
+if ! herdr plugin list --plugin vim-herdr-navigation --json | jq '.result.plugins == []' &>/dev/null; then
+  message "Install herdr plugins..."
+  herdr plugin install -y paulbkim-dev/vim-herdr-navigation
+fi
+
+# Update plugins
+if [[ $HERDR_INSTALL -eq 0 ]] && [[ $IN_HERDR -eq 1 ]] && [[ "$DATE_NEXT_UPDATE" < "$DATE_NOW_FORMAT" && ! -e "$ZSH_SKIP_UPDATE" ]]; then
+  message "Update herdr plugins..."
+  herdr plugin update -y &>/dev/null
 fi
 
 # Source/Load zinit
