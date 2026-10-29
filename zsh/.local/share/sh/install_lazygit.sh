@@ -1,4 +1,5 @@
 install_lazygit() {
+  local re="Debian|Ubuntu"
   if ! [[ "$OS_NAME" =~ "Debian|Ubuntu" ]]; then
     return
   fi
@@ -6,7 +7,8 @@ install_lazygit() {
   if [[ $(id -u) -ne 0 ]]; then
     message "Install/Update Lazygit (which may request your password)..."
     FUNCTIONS=$(declare -f version_lessthan install_lazygit)
-    execute_sudo "bash" "-c" "$FUNCTIONS; install_lazygit"
+    # execute_sudo "bash" "-c" "OS_NAME='$OS_NAME'; $FUNCTIONS; install_lazygit"
+    execute_sudo -E "bash" "-c" "$FUNCTIONS; install_lazygit"
     return
   fi
 
@@ -15,7 +17,6 @@ install_lazygit() {
     ARCH="arm64"
   fi
 
-  # LG_SETUP_FOLDER="/opt/lazygit/"
   LG_SETUP_FOLDER=$(mktemp -d)
   LAZYGIT_VERSION_GIT=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 
@@ -23,7 +24,6 @@ install_lazygit() {
 
   # if [[ ! -d "$LG_SETUP_FOLDER" ]]; then
   if type lazygit &>/dev/null; then
-    mkdir $LG_SETUP_FOLDER
     LAZYGIT_VERSION_INSTALLED=$(lazygit -v | grep -P ", version=(\d+\.\d+\.\d+)" -o | cut -d '=' -f 2)
   fi
 
